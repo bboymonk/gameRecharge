@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="SXRxcmhNY2sIBRwjAQJRMR4kIzc9CRdbER4IAiEMPDsTHz47A30uNA==">
+    <title>**充值平台</title>
+    <link href="/css/recharge/public.css" rel="stylesheet">
+    <link href="/css/recharge/index.css" rel="stylesheet">
+</head>
+<body>
+
+
+<header class="headerBox">
+    <div class="headerCon">
+        <span class="welcome lf">
+        	您好！欢迎来到**充值平台！
+    	</span>
+        <a class="headerLogin" href="/account/login.html">登录</a>
+        <a class="headerRegister" href="/register.html">注册</a>
+        <span class="headerUserName">看时间和</span>
+        <a class="headerMyNews" href="#">我的消息</a>
+
+        <div class="rt">
+            <ul>
+                <li class="myOrder"><a href="/member/personal/web-order.html">我的订单</a></li>
+                <li class="spacer"></li>
+                <li class="personalCenter"><a href="/member/personal.html">个人中心</a><span class="dropTriangle"></span>
+                </li>
+                <li class="spacer"></li>
+                <li class="businessCenter"><a href="http://backend.daminghu.co/" target="_blank">商家中心</a></li>
+                <li class="spacer"></li>
+                <li class="helpCenter"><a href="/help.html" target="_blank">帮助中心</a></li>
+                <li class="spacer"></li>
+                <li id="mobileTerminal">
+                    <a href="#">移动端</a>
+                    <div class="erweima">
+                        <img class="erweimaImg" src="/images/qrcode.jpg" alt=""/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="sideGuide">
+    <div class="sidebar">
+        <ul>
+            <li class="QQService">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=3398603984&site=qq&menu=yes" target="_blank"><s></s>QQ客服</a>
+                <!--div class="QQNumberBox">
+                    <p class="QQNumberCon">
+                        <span class="QQphoneIIcon"></span>
+                        <span class="QQNumberConText">3398603984</span>
+                    </p>
+                </div-->
+            </li>
+            <!--li class="phoneService">
+                <a href="#"><s></s>电话客服</a>
+                <div class="telNumberBox">
+                    <p class="telNumberCon">
+                        <span class="phoneIIcon"></span>
+                        <span class="telNumberConText">137 3083 4789</span>
+                    </p>
+                </div>
+            </li--!>
+
+            <li class="suggest"><a href="/help/advise.html"><s></s>投诉建议</a></li>
+            <li class="top"><a href="#"><s></s></a></li>
+        </ul>
+    </div>
+</div>
+<!--侧边导行部分-->
+            <div class="nofindBox">
+                <div class="nofindCon">
+                    <div class="addClose"></div>
+                    <div class="feedbackHeader">
+                        <p class="feedbackHeaderText">感谢您对我们反馈游戏/区服的问题，核实后我们会及时更新，请留意</p>
+                    </div>
+                    <div class="facdbackCon">
+                        <from id="noFindForm">
+                            <div class="grounpsLine">
+                                <span class="lf leftName">游戏类别：</span>
+                                <div class="lf">
+                                    <label class="radioCheck" for="PCTerminal">
+                                        <input id="PCTerminal" name="terminalType" type="radio" value="PC端"/>
+                                        PC端
+                                    </label>
+                                    <label class="radioCheck" for="androidTerminal">
+                                        <input id="androidTerminal" name="terminalType" type="radio" value="安卓端"/>
+                                        安卓端
+                                    </label>
+                                    <label class="radioCheck" for="appleTerminal">
+                                        <input id="appleTerminal" name="terminalType" type="radio" value="苹果端"/>
+                                        苹果端
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grounpsLine">
+                                <span class="lf leftName">选择分类：</span>
+                                <div class="lf">
+                                    <label class="radioCheck" for="game">
+                                        <input id="game" name="selecType" type="radio" value="游戏"/>
+                                        游戏
+                                    </label>
+                                    <label class="radioCheck" for="gameZone">
+                                        <input id="gameZone" name="selecType" type="radio" value="游戏区"/>
+                                        游戏区
+                                    </label>
+                                    <label class="radioCheck" for="server">
+                                        <input id="server" name="selecType" type="radio" value="服务器"/>
+                                        服务器
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grounpsLine">
+                                <span class="lf leftName">游戏名称：</span>
+
+                                <div class="lf">
+                                    <input type="text" class="facdbackGameName" name="facdbackGameName"
+                                           placeholder="请输入游戏名称"/>
+                                </div>
+                            </div>
+                            <div class="grounpsLine">
+                                <span class="lf leftName">游戏服区：</span>
+
+                                <div class="lf">
+                                    <input type="text" class="gameServiceName" name="gameServiceName"
+                                           placeholder="请输入游戏服区名称"/>
+                                </div>
+                            </div>
+                            <div class="confirmSubmit">
+                                <button class="confirmSubmitBtn" type="button">提交</button>
+                            </div>
+                        </from>
+                    </div>
+                </div>
+            </div>
+            <!--logo及搜索框-->
+            <div id="top_main">
+                <a href="http://www.daminghu.co" class="lf logo">
+                    <img src="/img/" alt="LOGO"/>
+                </a>
+
+                <div id="search_box" class="rt">
+                    <div class="search">
+                        <div id="txtSearch" class="text">
+                            <!--<div class="lf">-->
+                                <!--<ul>-->
+                                    <!--<li class="drop-down gameName"><a href="javascript:;" id="sGame" data-id="">游戏名称</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="verticalLine"></li>-->
+                                    <!--<li class="drop-down goodsType"><a href="javascript:;" id="sType" data-v=""-->
+                                                                       <!--data-k="">商品类型</a></li>-->
+                                    <!--<li class="verticalLine"></li>-->
+                                    <!--<li class="drop-down fullService"><a href="javascript:;" id="sArea" data-server="">全区全服</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="verticalLine"></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <div class="lf searchBox">
+                                <input type="text" class="searchInput" id="searchInput" placeholder="请输入游戏名/商品名/店铺名称"/>
+                            </div>
+                            <div class="" id="searchBut">
+                                搜索
+                            </div>
+                            <!-- <input class="button" id="searchBut" type="button" value="搜索"/> -->
+                        </div>
+
+                        <div class="searchBoxDrop gameBox" style="display:none;">
+                            <div class="gmeNameBox">
+                                <div class="triangle"></div>
+                                <div class="searchBoxCon">
+                                    <div class="searchBoxTitle">
+                                        <span class="historyCon"></span>
+                                        <div class="rt">
+                                            <a href="#" class="noFind lf">找不到？</a>
+                                            <span class="closeButton"></span>
+                                        </div>
+                                    </div>
+                                    <div class="quickSearch">
+                                        <input class="quickSearchInput searchGameName" type="text" name="keywords"
+                                               value="" placeholder="请输入游戏名"/>
+                                        <input class="quickSearchBtn searchGameBtn" type="button" value="快速搜索"/>
+                                    </div>
+                                    <div class="searchSection">
+                                        <div class="tabHead">
+                                            <div class="hotGame" style="">热门游戏</div>
+
+                                            <ul class="letterTab">
+                                                <li><a href="javascript:;" class="firstLetter">A</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">B</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">C</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">D</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">E</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">F</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">G</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">H</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">I</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">J</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">K</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">L</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">M</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">N</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">O</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">P</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">Q</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">R</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">S</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">T</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">U</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">V</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">W</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">X</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">Y</a></li>
+                                                <li><a href="javascript:;" class="firstLetter">Z</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="content">
+                                            <div class="tabSelection searchGameCon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="searchBoxDrop typeBox" style="display:none;">
+                            <div class="goodsTypeBox">
+                            </div>
+                        </div>
+                        <div class="searchBoxDrop areaBox" style="display:none;">
+                            <div class="fullServiceBox">
+                                <div class="triangle"></div>
+                                <div class="noSearch" style="display:none;"><p class="noSearchText">
+                                    为了您的搜索结果更精确，请先选择游戏</p>
+                                    <p class="noSearchHref"><a href="javascript:;" class="choosegame" id="choosegame">选择游戏</a>
+                                    </p></div>
+                                <div class="searchBoxCon">
+                                    <div class="searchBoxTitle">
+                                        <span></span>
+                                        <a href="javascript:;" class="gold">全区全服</a>
+                                        <div class="rt">
+                                            <a href="#" class="noFind lf">找不到？</a>
+                                            <span class="closeButton"></span>
+                                        </div>
+                                    </div>
+                                    <div class="searchSection">
+                                        <div class="quickSearch">
+                                            <input class="quickSearchInput searchAreaName" type="text" name="keywords"
+                                                   value="" placeholder="请输入区服名称"/>
+                                            <input class="quickSearchBtn searchAreaBtn" type="button" value="快速搜索"/>
+                                        </div>
+                                        <div class="content areaCon"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--div class="hot_words">
+                           <span>热门搜索词：</span> <a href="/games.html?keywords=%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80">王者荣耀</a> <a href="/games.html?keywords=%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4">炉石传说</a-->
+                    <!--<a href="/games.html?keywords=%E5%B0%81%E7%A5%9E%E6%A6%9C">封神榜</a>-->
+                    <!--a href="/games.html?keywords=%E5%B0%91%E5%B9%B4%E4%B8%89%E5%9B%BD%E5%BF%97">少年三国志</a> <a href="/games.html?keywords=%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81">部落冲突</a> <a href="/games.html?keywords=%E8%8B%B1%E9%9B%84%E6%9D%80">英雄杀</a>
+             </div-->
+                </div>
+
+            </div>
+
+            <!--主导航 -->
+            <nav id="nav">
+                <div class="navBox">
+                    <ul class="nav_items">
+                        <li class="navActive"><a class="navLink" href="/">首页</a></li>
+                        <li class="" id="IOSCharge">
+                            <a class="navLink" href="/games/charge.html">苹果代充</a>
+
+                            <div id="IOSChargeBox">
+                                <div class="quickSearch">
+                                    <input class="quickSearchInput iosWords" type="text" name="keywords" value=""
+                                           placeholder="请输入游戏名"/>
+                                    <input class="quickSearchBtn iosSearch" type="button" value="快速搜索"/>
+                                </div>
+                                <div class="searchSection">
+                                    <div class="tabHead IOSSearch">
+                                        <ul class="letterTab">
+                                            <li><a href="javascript:;" class="letterTag active">A</a></li>
+                                            <li><a href="javascript:;" class="letterTag">B</a></li>
+                                            <li><a href="javascript:;" class="letterTag">C</a></li>
+                                            <li><a href="javascript:;" class="letterTag">D</a></li>
+                                            <li><a href="javascript:;" class="letterTag">E</a></li>
+                                            <li><a href="javascript:;" class="letterTag">F</a></li>
+                                            <li><a href="javascript:;" class="letterTag">G</a></li>
+                                            <li><a href="javascript:;" class="letterTag">H</a></li>
+                                            <li><a href="javascript:;" class="letterTag">I</a></li>
+                                            <li><a href="javascript:;" class="letterTag">J</a></li>
+                                            <li><a href="javascript:;" class="letterTag">K</a></li>
+                                            <li><a href="javascript:;" class="letterTag">L</a></li>
+                                            <li><a href="javascript:;" class="letterTag">M</a></li>
+                                            <li><a href="javascript:;" class="letterTag">N</a></li>
+                                            <li><a href="javascript:;" class="letterTag">O</a></li>
+                                            <li><a href="javascript:;" class="letterTag">P</a></li>
+                                            <li><a href="javascript:;" class="letterTag">Q</a></li>
+                                            <li><a href="javascript:;" class="letterTag">R</a></li>
+                                            <li><a href="javascript:;" class="letterTag">S</a></li>
+                                            <li><a href="javascript:;" class="letterTag">T</a></li>
+                                            <li><a href="javascript:;" class="letterTag">U</a></li>
+                                            <li><a href="javascript:;" class="letterTag">V</a></li>
+                                            <li><a href="javascript:;" class="letterTag">W</a></li>
+                                            <li><a href="javascript:;" class="letterTag">X</a></li>
+                                            <li><a href="javascript:;" class="letterTag">Y</a></li>
+                                            <li><a href="javascript:;" class="letterTag">Z</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="content">
+                                        <div class="tabSelection searchCon"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class=""><a class="navLink" href="/hot-active.html">热门活动</a></li>
+                        <li class=""><a class="navLink" href="/help.html">帮助中心</a></li>
+                        <li class=""><a class="navLink" href="/account-trade.html">账号交易市场</a></li>
+                    </ul>
+
+                </div>
+
+            </nav>
+
+
+            <!--/ 面包屑 start -->
+            <div class="w" id="position">
+            </div>
+            <!--/ 面包屑 end -->
+
+
+            <!--script src="/js/index/carousel.js"></script-->
+            <!--banner部分-->
+            <article id="banner" class="banner">
+                <div class="top_slide_wrap">
+                    <div class="bx-wrapper">
+                        <ul class="slide_box">
+                            <li><a href="/help/shownews-30.html" target="_blank"><img src="/img/ch.jpg" alt=""></a>
+                            </li>
+                            <li><a href="/help/view-21.html" target="_blank"><img src="/img/lz.jpg" alt=""></a>
+                            </li>
+                            <li><a href="/topic/share.html" target="_blank"><img src="/img/www.jpg" alt=""></a>
+                            </li>
+                            <li><a href="/topic/stock.html" target="_blank"><img src="/img/cf.jpg"
+                                                                                 alt=""></a></li>
+                        </ul>
+                        <ul class="bx-controls">
+                            <li>
+                                <a class="actives" href="/help/shownews-30.html" target="_blank">
+                                    <img src="/images/index/s1.png" alt=""/>
+                                    <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/help/view-21.html" target="_blank">
+                                    <img src="/images/index/s2.png" alt="">
+                                    <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/topic/share.html" target="_blank">
+                                    <img src="/images/index/s3.png" alt="">
+                                    <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/topic/stock.html" target="_blank">
+                                    <img src="/images/index/chajian2.png" alt="">
+                                    <span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="options pre" href="javascript:;" data-drec="pre"><i class="pre"></i></a>
+                    <a class="options next" href="javascript:;" data-drex="next"><i class="next"></i></a>
+                </div>
+                <div class="asideRight">
+                    <div class="buySellBtns">
+                        <div class="buyBtn">
+                            <a href="/games/charge.html" target="_blank">
+                                <button type="button">我要购买</button>
+                            </a>
+                        </div>
+                        <div class="sellBtn">
+                            <a href="http://backend.daminghu.co/zhaoshang/index" target="_blank">
+                                <button type="button">我要出售</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="virtuals">
+                        <ul>
+                            <li class="merchantsSettled"><a href="/help/view-21.html" target="_blank"><s></s>商家入驻</a>
+                            </li>
+                            <li class="storeRecommend"><a href="/member/personal.html"><s></s>个人中心</a></li>
+                            <li class="commonProblem"><a href="/help.html" target="_blank"><s></s>常见问题</a></li>
+                            <li class="gameInfo"><a href="/help/news.html?cid=8" target="_blank"><s></s>游戏资讯</a></li>
+                        </ul>
+                    </div>
+                    <div class="realTimeNews">
+                        <div class="newsHeader">
+                            <ul>
+                                <li class="line"></li>
+                                <li class="newsTitle">实时消息</li>
+                                <li class="line"></li>
+                            </ul>
+                        </div>
+                        <div class="newsContain">
+                            <ul class="JQ-slide-content">
+                                <li>
+                                    <a href="/details-928.html" target="_blank"><span class="circle"></span><b
+                                            class="newsConHead">上帝的白衬衣！</b> 购买了Apple 账号 测试商品请勿购买3</a>
+                                </li>
+                                <li>
+                                    <a href="/details-928.html" target="_blank"><span class="circle"></span><b
+                                            class="newsConHead">上帝的白衬衣！</b> 购买了Apple 账号 测试商品请勿购买3</a>
+                                </li>
+                                <li>
+                                    <a href="/details-928.html" target="_blank"><span class="circle"></span><b
+                                            class="newsConHead">上帝的白衬衣！</b> 购买了Apple 账号 测试商品请勿购买3</a>
+                                </li>
+                                <li>
+                                    <a href="/details-928.html" target="_blank"><span class="circle"></span><b
+                                            class="newsConHead">上帝的白衬衣！</b> 购买了Apple 账号 测试商品请勿购买3</a>
+                                </li>
+                                <li>
+                                    <a href="/details-928.html" target="_blank"><span class="circle"></span><b
+                                            class="newsConHead">上帝的白衬衣！</b> 购买了Apple 账号 测试商品请勿购买3</a>
+                                </li>
+                                <li>
+                                    <a href="/details-928.html" target="_blank"><span class="circle"></span><b
+                                            class="newsConHead">上帝的白衬衣！</b> 购买了Apple 账号 测试商品请勿购买3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="notice">
+                    <div class="horn">
+                        <img src="/images/index/喇叭.gif" alt=""/>
+                    </div>
+                    <ul class="JQ-slide-content">
+                        <li><a href="/help/shownews-30.html" target="_blank">【公告】大明湖交易平台上线啦</a></li>
+                    </ul>
+                    <div class="noticeClose"><a class="addCloseBtn" href="javascript:void(0);"></a></div>
+                </div>
+            </article>
+
+            <!--主体内容! -->
+            <section id="main" class="main clear">
+                <div class="floor">
+                    <div class="popularGame">
+                        <div class="InfoTitle">
+                            <div class="title">热门游戏</div>
+                            <div class="more"><a href="/games.html" target="_blank">更多+</a></div>
+                        </div>
+                        <div class="gameContain">
+                            <ul>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-2753.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-2753.html" target="_blank"><h5 class="gameTitle">王者荣耀</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-2753.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-4487.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20170105/be731b6c-2097-483a-7eff-fcc5cb255b0c.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-4487.html" target="_blank"><h5 class="gameTitle">寻情剑</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-4487.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-3657.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/fd07d3c9-d8ae-cca0-8435-3b3121a0d1dc.jpg"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-3657.html" target="_blank"><h5 class="gameTitle">城市精灵GO</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-3657.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-176.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/12e81253-54bc-1b24-bfd5-e69702a9cfa3.jpg"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-176.html" target="_blank"><h5 class="gameTitle">部落冲突</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-176.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-4056.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/70ad5731-5187-3924-99a7-a4fc71f9f8bd.gif"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-4056.html" target="_blank"><h5 class="gameTitle">
+                                                少年西游记HD</h5></a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-4056.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-4198.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/60fc91f9-39c0-bdea-e96c-deb97a97639c.jpg"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-4198.html" target="_blank"><h5 class="gameTitle">王国纪元</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-4198.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-3840.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/8e38fd61-1acb-4d26-772a-f06fcd071d94.jpg"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-3840.html" target="_blank"><h5 class="gameTitle">苍穹绝仙</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-3840.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-2919.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161226/11b58565-48d8-2a98-e2ee-6c4bd026be75.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-2919.html" target="_blank"><h5 class="gameTitle">沙巴克传奇</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-2919.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-2416.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/6e48d7ae-df12-7e2a-625d-9763e6a67b87.gif"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-2416.html" target="_blank"><h5 class="gameTitle">王者荣耀</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-4490.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20170105/db47e51c-fe1b-d008-6b12-3d066d12ffd6.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-4490.html" target="_blank"><h5 class="gameTitle">兽人之战</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-4490.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-4489.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20170105/7ae9a2d8-3064-327b-e6e3-e4048ee1f89d.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-4489.html" target="_blank"><h5 class="gameTitle">天天打蛋蛋</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-4489.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/goods-4488.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20170105/35260049-06d7-3ac0-d193-95cdfc644133.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/goods-4488.html" target="_blank"><h5 class="gameTitle">口袋苍穹</h5>
+                                            </a>
+
+                                            <div class="gameClassify">
+                                                <a class="chargeGeneration"
+                                                   href="/goods-4488.html?pid=2" target="_blank">代充</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gameInformation">
+                        <div class="InfoTitle">
+                            <div class="title">热门资讯</div>
+                            <div class="more"><a href="/help/news.html?cid=8" target="_blank">更多+</a></div>
+                        </div>
+                        <div class="gameInfoCon">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor">
+                    <div class="recommend">
+                        <div class="InfoTitle">
+                            <div class="title">大明湖推荐</div>
+                            <div class="more">
+                            </div>
+                        </div>
+                        <div class="recommendCon">
+                            <ul>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/account-trade/detail-928.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20170703/c6c84f11-5b2b-fc7a-d1d8-e91af2867051.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/account-trade/detail-928.html" target="_blank"><h5
+                                                    class="recommendTitle">Apple 账号 测试商品请勿购买3</h5></a>
+
+                                            <div class="gameClassify">
+                                                <div class="recommPrice">
+                                                    <span class="Gameprice">￥0.10</span>
+                                                    <span class="directPrice">/ <i>￥0.10</i></span>
+                                                </div>
+                                                <div class="buyBtn">
+                                                    <a href="/details-928.html" class="purchase"
+                                                       target="_blank">我要购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/details-815.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20170105/be731b6c-2097-483a-7eff-fcc5cb255b0c.png"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/details-815.html" target="_blank"><h5 class="recommendTitle">寻情剑
+                                                IOS代充 300元宝 正规充值</h5></a>
+
+                                            <div class="gameClassify">
+                                                <div class="recommPrice">
+                                                    <span class="Gameprice">￥28.00</span>
+                                                    <span class="directPrice">/ <i>￥30.00</i></span>
+                                                </div>
+                                                <div class="buyBtn">
+                                                    <a href="/details-815.html" class="purchase"
+                                                       target="_blank">我要购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/details-884.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/details-884.html" target="_blank"><h5 class="recommendTitle">王者荣耀
+                                                IOS代充 10点券</h5></a>
+
+                                            <div class="gameClassify">
+                                                <div class="recommPrice">
+                                                    <span class="Gameprice">￥1.00</span>
+                                                    <span class="directPrice">/ <i>￥1.00</i></span>
+                                                </div>
+                                                <div class="buyBtn">
+                                                    <a href="/details-884.html" class="purchase"
+                                                       target="_blank">我要购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/details-612.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/fd07d3c9-d8ae-cca0-8435-3b3121a0d1dc.jpg"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/details-612.html" target="_blank"><h5 class="recommendTitle">
+                                                城市精灵GO IOS代充 60钻石 正规充值</h5></a>
+
+                                            <div class="gameClassify">
+                                                <div class="recommPrice">
+                                                    <span class="Gameprice">￥6.00</span>
+                                                    <span class="directPrice">/ <i>￥6.00</i></span>
+                                                </div>
+                                                <div class="buyBtn">
+                                                    <a href="/details-612.html" class="purchase"
+                                                       target="_blank">我要购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/details-552.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/details-552.html" target="_blank"><h5 class="recommendTitle">王者荣耀
+                                                IOS代充 6480点券 6480点卷</h5></a>
+
+                                            <div class="gameClassify">
+                                                <div class="recommPrice">
+                                                    <span class="Gameprice">￥560.00</span>
+                                                    <span class="directPrice">/ <i>￥648.00</i></span>
+                                                </div>
+                                                <div class="buyBtn">
+                                                    <a href="/details-552.html" class="purchase"
+                                                       target="_blank">我要购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gameConBox">
+                                        <div class="gameConBoxImg">
+                                            <a href="/details-539.html" target="_blank"> <img
+                                                    src="http://upload.static.daminghu.co/resource/public/game/20161006/12e81253-54bc-1b24-bfd5-e69702a9cfa3.jpg"
+                                                    alt=""/> </a>
+                                        </div>
+                                        <div class="gameConDetail">
+                                            <a href="/details-539.html" target="_blank"><h5 class="recommendTitle">部落冲突
+                                                IOS代充 一大箱宝石</h5></a>
+
+                                            <div class="gameClassify">
+                                                <div class="recommPrice">
+                                                    <span class="Gameprice">￥560.00</span>
+                                                    <span class="directPrice">/ <i>￥648.00</i></span>
+                                                </div>
+                                                <div class="buyBtn">
+                                                    <a href="/details-539.html" class="purchase"
+                                                       target="_blank">我要购买</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gameInformation">
+                        <div class="InfoTitle">
+                            <div class="title">常见问题</div>
+                            <div class="more"><a href="/help.html" target="_blank">更多+</a></div>
+                        </div>
+                        <div class="gameInfoCon" style="height:245px;">
+                            <ul>
+                                <li class="gameInfoList">
+                                    <a href="/help/view-12.html" target="_blank" class="lf wireLink">
+                                        <span class="circle lf"></span>
+                                        <span class="rt wireLinkText">支付方式</span>
+                                    </a>
+                                </li>
+                                <li class="gameInfoList">
+                                    <a href="/help/view-21.html" target="_blank" class="lf wireLink">
+                                        <span class="circle lf"></span>
+                                        <span class="rt wireLinkText">商家入驻</span>
+                                    </a>
+                                </li>
+                                <li class="gameInfoList">
+                                    <a href="/help/view-26.html" target="_blank" class="lf wireLink">
+                                        <span class="circle lf"></span>
+                                        <span class="rt wireLinkText">如何申请退款</span>
+                                    </a>
+                                </li>
+                                <li class="gameInfoList">
+                                    <a href="/help/view-28.html" target="_blank" class="lf wireLink">
+                                        <span class="circle lf"></span>
+                                        <span class="rt wireLinkText">实名认证</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor">
+                </div>
+                <div class="floor">
+                    <div class="partner">
+                        <!--            <div class="InfoTitle">
+                                        <div class="title">合作伙伴</div>
+                                    </div>
+                                   <div class="partnerList">
+                                       <ul>
+                                           <li class="partnerImgBox"><a href="javascript:void(0);" target="_blank"><img class="partnerImg" src="/images/index/huoban.png" alt=""/></a></li>
+                                           <li class="verticalLinesBox"><img src="/images/index/yd.png" alt=""/></li>
+                                           <li class="partnerImgBox"><a href="javascript:void(0);" target="_blank"><img class="partnerImg" src="/images/index/zfb.png" alt=""/></a></li>
+                                           li class="verticalLinesBox"><img src="/images/index/yd.png" alt=""/></li>
+                                           <li class="partnerImgBox"><a href="javascript:void(0);" target="_blank"><img class="partnerImg"  src="/images/index/weixin.png" alt=""/></a></li>
+                                           <li class="verticalLinesBox"><img src="/images/index/yd.png" alt=""/></li>
+                                           <li class="partnerImgBox"><a href="javascript:void(0);" target="_blank"><img class="partnerImg"  src="/images/index/qiye.png" alt=""/></a></li
+                                       </ul>
+                                   </div>-->
+                    </div>
+                </div>
+            </section>
+            <input type="hidden" id="csrf" name="csrf" value="SXRxcmhNY2sIBRwjAQJRMR4kIzc9CRdbER4IAiEMPDsTHz47A30uNA==">
+            <!--底部 -->
+
+            <footer id="foot_box">
+                <div class="footerContain">
+                    <div style="margin-left: 90px;">
+                        <ul>
+                            <li><b>新手入门</b></li>
+                            <li><a href="/help/view-29.html" target="_blank">免费注册</a></li>
+                            <li><a href="/help/view-27.html" target="_blank">如何购买商品</a></li>
+                            <li><a href="/help/view.html?cid=4" target="_blank">余额提现</a></li>
+                        </ul>
+                        <ul>
+                            <li><b>诚信服务</b></li>
+                            <li><a href="/help/view-7.html" target="_blank">用户协议</a></li>
+                            <!--<li><a href="/help/view-2.html" target="_blank">免责声明</a></li>-->
+                            <li><a href="/help/server.html" target="_blank">7*24小时服务</a></li>
+                        </ul>
+                        <ul>
+                            <li><b>交易保障</b></li>
+                            <li><a href="/help/view-28.html" target="_blank">实名认证</a></li>
+                            <li><a href="/help/view-12.html" target="_blank">支付宝交易</a></li>
+                            <li><a href="/help/advise.html" target="_blank">投诉与建议</a></li>
+                        </ul>
+                        <ul>
+                            <li><b>关于我们</b></li>
+                            <li><a href="/help/view-2.html" target="_blank">关于大明湖</a></li>
+                            <li><a href="/help/view-9.html" target="_blank">联系我们</a></li>
+                            <li><a href="/help/view-8.html" target="_blank">商务合作</a></li>
+                        </ul>
+                        <ul>
+                            <li class="service"><span class="serviceImg"><img src="/img/QQ1.png"/></span></li>
+                            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=769721002&site=qq&menu=yes" target="_blank"
+                                   class="PhoneNumber">客服QQ：769721002</a></li>
+                            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=3398603984&site=qq&menu=yes" target="_blank"
+                                   class="PhoneNumber">客服QQ：3398603984</a></li>
+                        </ul>
+                        <ul>
+                            <li class="scanCode">
+                    <span class="scanCodeImg">
+                        <img src="/images/qrcode.jpg"/>
+                    </span>
+                            </li>
+                            <li>
+                                <p>扫一扫,关注官网公众号</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="certification"><a rel="nofollow" target="_blank" key="58ad0009efbfb055687806ee"
+                                                  logo_size="124x47" logo_type="business" href="http://www.anquan.org">
+                        <script src="//static.anquan.org/static/outer/js/aq_auth.js"></script>
+                    </a></div>
+                    <div class="copyright">
+                        <p>Copyright © 2017 <a href="/help/view-2.html">顾色科技 </a>版权所有 <br/></p>
+                        <p>蜀ICP备16030047号-1</p>
+                    </div>
+                </div>
+            </footer>
+
+</body>
+</html>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/recharge//vii.js"></script>
+<script src="/js/recharge/public.js"></script>
+<script src="/js/recharge/search.js"></script>
+<script src="/js/recharge/slide.js"></script>
+<script src="/js/recharge/home.js"></script></body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular-sanitize.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular-animate.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-md5/0.1.10/angular-md5.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <button type="button" class="btn btn-sm btn-danger" ng-click="query()">搜索</button>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>address</th>
+            <th>createTime</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in list">
+            <th>{{x.id}}</th>
+            <th>{{x.name}}</th>
+            <th>{{x.age}}</th>
+            <th>{{x.address}}</th>
+            <th>{{x.createTime | date:'yyyy/MM/dd HH:mm:ss'}}</th>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul uib-pagination
+        boundary-links="true"
+        items-per-page="size"
+        total-items="totalItems"
+        ng-model="currentPage"
+        class="pagination"
+        ng-change="pageChanged()"
+        previous-text="&lsaquo;"
+        next-text="&rsaquo;"
+        first-text="&laquo;"
+        last-text="&raquo;">
+    </ul>
+    <button ng-click="goto(number)">goto</button>
+
+
+</div>
+</body>
+
+<script>
+    var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+    app.controller('myCtrl', function ($scope, $http) {
+        $scope.currentPage = 1;//初始当前页
+        $scope.maxSize = 7; //最多显示多少页码
+        $scope.size=5;
+
+        $scope.setPage = function (pageNo) {
+            $scope.currentPage = pageNo;
+        };
+        $scope.pageChanged = function () {
+            $scope.query();
+        };
+
+        $scope.query = function query() {
+            var URL = "/hello?pageNum="+$scope.currentPage+"&size="+$scope.size;
+            $http.get(URL).then(function (response) {
+                $scope.list = response.data.DATA.list;
+                console.log($scope.list);
+                $scope.totalItems = response.data.DATA.total;
+
+            });
+        }
+        $scope.query();
+        $scope.goto = function (number) {
+            $scope.currentPage = number;
+        }
+
+
+
+    });
+</script>
+
+
+</html>

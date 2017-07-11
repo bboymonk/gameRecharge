@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/flexy-menu.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/js/navigation.js"></script>
+    <script type="text/javascript">$(document).ready(function () {
+        $(".flexy-menu").flexymenu({speed: 400});
+    });</script>
+
+</head>
+<style>
+    .navigation {
+        background: #fff url(/img/texture.png) repeat;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        margin: 0px 50px 0px 50px;
+    }
+    .flexy-menu {
+        margin: 0 0 0 0;
+    }
+    a.back {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        margin: 50px auto;
+        padding: 10px 30px;
+        background: #333;
+        font-family: Segoe UI;
+    }
+    button{
+        float: right;
+
+    }
+    .searchBox{
+        width: 200px;
+        height: 90px;
+        padding-top: 10px;
+        margin:0 auto;
+    }
+
+
+</style>
+
+<body>
+
+    <div id="search_box" class="rt">
+        <div class="search">
+            <div id="txtSearch" class="text">
+
+                <div class="lf searchBox">
+                    <input type="text" class="searchInput" id="searchInput" placeholder="请输入游戏名/商品名/店铺名称"/>
+                </div>
+                <div class="" id="searchBut">
+                    搜索
+                </div>
+                <!-- <input class="button" id="searchBut" type="button" value="搜索"/> -->
+            </div>
+
+            <div class="searchBoxDrop gameBox" style="display:none;">
+                <div class="gmeNameBox">
+                    <div class="triangle"></div>
+                    <div class="searchBoxCon">
+                        <div class="searchBoxTitle">
+                            <span class="historyCon"></span>
+                            <div class="rt">
+                                <a href="#" class="noFind lf">找不到？</a>
+                                <span class="closeButton"></span>
+                            </div>
+                        </div>
+                        <div class="quickSearch">
+                            <input class="quickSearchInput searchGameName" type="text" name="keywords" value="" placeholder="请输入游戏名"/>
+                            <input class="quickSearchBtn searchGameBtn" type="button" value="快速搜索"/>
+                        </div>
+                        <div class="searchSection">
+                            <div class="tabHead">
+                                <div class="hotGame" style="">热门游戏</div>
+
+                                <ul class="letterTab">
+                                    <li><a href="javascript:;" class="firstLetter">A</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">B</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">C</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">D</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">E</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">F</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">G</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">H</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">I</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">J</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">K</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">L</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">M</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">N</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">O</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">P</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">Q</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">R</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">S</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">T</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">U</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">V</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">W</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">X</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">Y</a></li>
+                                    <li><a href="javascript:;" class="firstLetter">Z</a></li>
+                                </ul>
+                            </div>
+                            <div class="content">
+                                <div class="tabSelection searchGameCon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchBoxDrop typeBox" style="display:none;">
+                <div class="goodsTypeBox">
+                </div>
+            </div>
+            <div class="searchBoxDrop areaBox" style="display:none;">
+                <div class="fullServiceBox">
+                    <div class="triangle"></div>
+                    <div class="noSearch" style="display:none;"><p class="noSearchText">为了您的搜索结果更精确，请先选择游戏</p><p class="noSearchHref"><a href="javascript:;" class="choosegame" id="choosegame">选择游戏</a></p></div>
+                    <div class="searchBoxCon">
+                        <div class="searchBoxTitle">
+                            <span></span>
+                            <a href="javascript:;" class="gold">全区全服</a>
+                            <div class="rt">
+                                <a href="#" class="noFind lf">找不到？</a>
+                                <span class="closeButton"></span>
+                            </div>
+                        </div>
+                        <div class="searchSection">
+                            <div class="quickSearch">
+                                <input class="quickSearchInput searchAreaName" type="text" name="keywords" value="" placeholder="请输入区服名称"/>
+                                <input class="quickSearchBtn searchAreaBtn" type="button" value="快速搜索"/>
+                            </div>
+                            <div class="content areaCon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--div class="hot_words">
+               <span>热门搜索词：</span> <a href="/games.html?keywords=%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80">王者荣耀</a> <a href="/games.html?keywords=%E7%82%89%E7%9F%B3%E4%BC%A0%E8%AF%B4">炉石传说</a--> <!--<a href="/games.html?keywords=%E5%B0%81%E7%A5%9E%E6%A6%9C">封神榜</a>-->
+        <!--a href="/games.html?keywords=%E5%B0%91%E5%B9%B4%E4%B8%89%E5%9B%BD%E5%BF%97">少年三国志</a> <a href="/games.html?keywords=%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81">部落冲突</a> <a href="/games.html?keywords=%E8%8B%B1%E9%9B%84%E6%9D%80">英雄杀</a>
+ </div-->
+    </div>
+
+
+
+
+
+
+
+
+
+<!--导航栏-->
+<div class="navigation">
+<div class="content">
+    <ul class="flexy-menu orange">
+        <li class="active"><a href="JavaScript:void(0)"><i class="icon-heart">
+        </i>首页</a></li>
+        <li><a href="JavaScript:void(0)"><i class="icon-th"></i>苹果代充</a>
+            <ul>
+                <li><a href="JavaScript:void(0)">王者荣耀</a></li>
+                <li><a href="JavaScript:void(0)">寻情剑</a></li>
+                <li><a href="JavaScript:void(0)">城市精灵</a>
+                    <ul>
+                        <li><a href="JavaScript:void(0)">Dropdown item</a></li>
+                        <li><a href="JavaScript:void(0)">Dropdown item</a></li>
+                        <li><a href="JavaScript:void(0)">Dropdown item</a>
+                            <ul>
+                                <li><a href="JavaScript:void(0)">Dropdown item</a></li>
+                                <li><a href="JavaScript:void(0)">Dropdown item</a></li>
+                                <li><a href="JavaScript:void(0)">Dropdown item</a></li>
+                                <li><a href="JavaScript:void(0)">Dropdown item</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="JavaScript:void(0)">部落冲突</a></li>
+                    </ul>
+                </li>
+                <li><a href="JavaScript:void(0)">部落冲突</a></li>
+                <li><a href="JavaScript:void(0)">大圣之怒</a></li>
+            </ul>
+        </li>
+        <li><a href="JavaScript:void(0)"><i class="icon-cogs"></i>热门活动</a></li>
+        <li><a href="JavaScript:void(0)"><i class="icon-bullhorn"></i>帮助中心</a></li>
+        <li><a href="JavaScript:void(0)"><i class="icon-envelope"></i>账号交易市场</a></li>
+    </ul>
+</div>
+</div>
+
+</body>
+</html>

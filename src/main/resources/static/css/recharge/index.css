@@ -1,0 +1,940 @@
+/*banner閮ㄥ垎*/
+.banner {
+    width: 1200px;
+    margin: 9px auto 0px auto;
+    overflow: hidden;
+}
+
+/************************************************/
+.none {
+    display: none
+}
+
+/* top_slide_wrap */
+.top_slide_wrap {
+    width: 926px;
+    height: 280px;
+    margin: 0 auto;
+    position: relative;
+    float: left;
+
+}
+
+.top_slide_wrap .bx-wrapper {
+    overflow: hidden
+}
+
+.top_slide_wrap .bx-wrapper ul.slide_box {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    z-index: 4
+}
+
+.top_slide_wrap .bx-wrapper ul.slide_box li {
+    position: absolute;
+    width: 926px;
+    height: 280px;
+    left: 0;
+    top: 0;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out
+}
+
+.top_slide_wrap .bx-wrapper ul.slide_box li a {
+    color: #fff;
+    display: block;
+    cursor: pointer
+}
+
+.top_slide_wrap .bx-wrapper ul.slide_box li a img {
+    width: 926px;
+    height: 280px
+}
+
+.top_slide_wrap .bx-wrapper ul.slide_box li a:hover {
+    text-decoration: none
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls {
+    margin-top: 10px;
+    background-color: #fff;
+    /*padding: 2px 0 2px 2px;*/
+    overflow: hidden;
+    *zoom: 1;
+    position: relative;
+    z-index: 5
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls li {
+    float: left;
+    position: relative;
+    width: 224px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls li:last-child {
+    margin-right: 0px;
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls li a.actives span, .top_slide_wrap .bx-wrapper ul.bx-controls li a:hover span {
+    top: 115px
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls li a.actives p, .top_slide_wrap .bx-wrapper ul.bx-controls li a:hover p {
+    top: 115px
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls li img {
+    width: 224px;
+    height: 100px
+}
+
+.top_slide_wrap .bx-wrapper ul.bx-controls li span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 6;
+    width: 224px;
+    height: 100px;
+    background-color: #000;
+    opacity: .5;
+    -webkit-transition: top .5s ease-out;
+    -moz-transition: top .5s ease-out;
+    -ms-transition: top .5s ease-out;
+    -o-transition: top .5s ease-out;
+    transition: top .5s ease-out
+}
+
+.top_slide_wrap a.options {
+    position: absolute;
+    top: 121px;
+    width: 30px;
+    height: 45px;
+    padding: 4px 0 0 8px;
+    background-color: #000;
+    opacity: .3;
+    z-index: 5;
+    display: none;
+}
+
+.top_slide_wrap a.options i {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 20px;
+    height: 40px
+}
+
+.top_slide_wrap a.options i.pre {
+    background: url("/images/index/icons.png") no-repeat 0 0;
+}
+
+.top_slide_wrap a.options i.next {
+    background: url("/images/index/icons.png") no-repeat -25px 0;
+}
+
+.top_slide_wrap a.options.pre {
+    left: 0
+}
+
+.top_slide_wrap a.options.next {
+    right: 0
+}
+
+/*************************************************/
+/*鍙充晶鍐呭*/
+.asideRight {
+    /*padding-top: 10px;*/
+    float: right;
+    margin-left: 10px;
+}
+
+.asideRight .buySellBtns .buyBtn button {
+    height: 40px;
+    width: 260px;
+    font-size: 16px;
+    background: #7ab9ff;
+    color: #ffffff;
+    border: none;
+    /*border-radius: 3px;*/
+    /*margin-top: 20px;*/
+    cursor: pointer;
+}
+
+.asideRight .buySellBtns .sellBtn button {
+    height: 40px;
+    width: 260px;
+    font-size: 16px;
+    background: #f99070;
+    color: #ffffff;
+    border: none;
+    /*border-radius: 5px;*/
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.virtuals {
+    margin-top: 12px;
+    width: 258px;
+    height: 112px;
+    border-left: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.virtuals ul li {
+    border-right: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+    width: 127px;
+    height: 55px;
+    float: left;
+    text-align: center;
+}
+
+.virtuals ul li a {
+    line-height: 56px;
+    text-align: left;
+    width: 128px;
+    display: block;
+    float: left;
+    color: #666;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.virtuals ul li s {
+    background: url("/images/index/qietu.png") no-repeat;
+    display: inline-block;
+    width: 28px;
+    height: 26px;
+    margin: 15px 10px 15px 20px;
+    float: left;
+}
+
+.virtuals ul .commonProblem s {
+    background-position: 0px -153px;
+}
+
+.virtuals ul .storeRecommend s {
+    background-position: -38px -153px;
+}
+
+.virtuals ul .merchantsSettled s {
+    background-position: -67px -153px;
+}
+
+.virtuals ul .gameInfo s {
+    background-position: -100px -153px;
+}
+
+.realTimeNews {
+    margin-top: 12px;
+    width: 258px;
+    height: 173px;
+}
+
+.newsHeader ul {
+    overflow: hidden;
+    padding-left: 5px;
+}
+
+.newsHeader ul li {
+    float: left;
+}
+
+.line {
+    height: 1px;
+    width: 82px;
+    border-top: 1px solid #868686;
+    margin-top: 15px;
+}
+
+.newsTitle {
+    margin: 5px 20px;
+}
+
+.newsContain {
+    margin-top: 6px;
+    height: 130px;
+    overflow: hidden;
+}
+
+.newsContain ul li {
+    height: 28px;
+    width: 258px;
+}
+
+.newsContain ul li a {
+    display: block;
+    height: 28px;
+    width: 258px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.newsContain ul li a:hover {
+    color: #666 !important;
+}
+
+.circle {
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background: #515151;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 0px 12px 2px 5px;
+}
+
+.newsContain .newsConHead {
+    font-weight: normal;
+    color: #ff8800;
+    /*padding-left: 12px;*/
+}
+
+.notice {
+    height: 35px;
+    background: #eeeeee;
+    clear: both;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.horn {
+    float: left;
+    height: 35px;
+    width: 50px;
+    padding-top: 3px;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.notice ul {
+    float: left;
+}
+
+.notice ul li a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    color: #838383;
+}
+
+.noticeClose {
+    overflow: hidden;
+    float: right;
+    height: 35px;
+    width: 50px;
+}
+
+.addCloseBtn {
+    float: right;
+    display: block;
+    height: 17px;
+    width: 17px;
+    background: url("/img/qietu.png") -113px -116px no-repeat;
+    margin: 9px 20px 0px 0px;
+    cursor: pointer;
+}
+
+/* 涓婚閮ㄥ垎*/
+.main {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding-top: 0px !important;
+}
+
+.floor {
+    overflow: hidden;
+}
+
+.main .popularGame {
+    width: 1000px;
+    margin-top: 5px;
+    float: left;
+}
+
+.main .InfoTitle {
+    border-bottom: 1px solid #cccccc;
+    overflow: hidden;
+    line-height: 50px;
+}
+
+.main .title {
+    color: #ff8800;
+    float: left;
+    font-size: 18px;
+}
+
+.main .more {
+    float: right;
+}
+
+.main .more a {
+    font-size: 14px;
+    display: block;
+    line-height: 30px;
+    margin-top: 15px;
+}
+
+.main .gameInformation {
+    float: right;
+    width: 175px;
+    margin-top: 5px;
+}
+
+.gameContain ul {
+    overflow: hidden;
+    height: 363px;
+}
+
+.gameContain ul li {
+    float: left;
+    width: 250px;
+}
+
+/*.gameContain ul li a {*/
+/*display: block;*/
+/*width: 250px;*/
+/*}*/
+
+.gameConBox {
+    padding: 20px 8px 10px 8px;
+    overflow: hidden;
+}
+
+.gameConBoxImg {
+    float: left;
+    height: 91px;
+    width: 91px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    /*border: 1px solid #c2c2c2;*/
+    margin-right: 10px;
+}
+
+.gameConBoxImg img {
+    height: 91px;
+    width: 91px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.gameConBoxImg a:hover img {
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    -o-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+}
+
+.gameConDetail {
+    float: left;
+}
+
+.gameConDetail .gameTitle {
+    font-size: 16px;
+    color: #0c0c0c;
+    font-weight: normal;
+    line-height: 28px;
+    width: 119px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.gameConDetail .gameClassify {
+    width: 125px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.gameCoinFrame {
+    float: left;
+    display: inline-block;
+
+}
+
+.gameClassify .chargeGeneration, .gameCurrency, .Items, .accountNumber, .leveling, .Package {
+    display: inline-block;
+    margin: 3px 3px 3px 0px;
+    width: 56px;
+    height: 24px;
+    color: #ffffff;
+    line-height: 22px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.gameConDetail .chargeGeneration {
+    background-color: #fff;
+    border: 1px solid #f99170;
+    color: #f99170;
+}
+
+.gameConDetail .chargeGeneration:hover {
+    background-color: #f99170;
+    border: 1px solid #f99170;
+    color: #FFFFFF;
+}
+
+.gameClassify .gameCurrency {
+    background-color: #fff;
+    border: 1px solid #64bbf7;
+    color: #64bbf7;
+}
+
+.gameClassify .gameCurrency:hover {
+    background-color: #64bbf7;
+    border: 1px solid #64bbf7;
+    color: #FFFFFF;
+}
+
+.gameClassify .Items {
+    background-color: #fff;
+    border: 1px solid #f1c334;
+    color: #f1c334;
+}
+
+.gameClassify .Items:hover {
+    background-color: #f1c334;
+    border: 1px solid #f1c334;
+    color: #FFFFFF;;
+}
+
+.gameClassify .accountNumber {
+    background-color: #fff;
+    border: 1px solid #f95a66;
+    color: #f95a66;
+}
+
+.gameClassify .accountNumber:hover {
+    background-color: #f95a66;
+    border: 1px solid #f95a66;
+    color: #FFFFFF;
+}
+
+.gameClassify .leveling {
+    background-color: #fff;
+    border: 1px solid #18cbdb;
+    color: #18cbdb;
+}
+
+.gameClassify .leveling:hover {
+    background-color: #18cbdb;
+    border: 1px solid #18cbdb;
+    color: #FFFFFF;;
+}
+
+.gameClassify .Package {
+    background-color: #fff;
+    border: 1px solid #85cd3c;
+    color: #85cd3c;
+}
+
+.gameClassify .Package:hover {
+    background-color: #85cd3c;
+    border: 1px solid #85cd3c;
+    color: #FFFFFF;;
+}
+
+.gameInfoCon {
+    height: 363px;
+    overflow: hidden;
+}
+
+.gameInfoList {
+    padding-top: 15px;
+    overflow: hidden;
+}
+
+.wireLink {
+    display: inline-block;
+    width: 175px;
+}
+
+.wireLinkText {
+    line-height: 20px;
+    width: 150px;
+    max-height: 40px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+    /*-o-text-overflow: ellipsis;*/
+    /*-moz-text-overflow: ellipsis;*/
+    /*-webkit-text-overflow: ellipsis;*/
+    overflow: hidden;
+}
+
+.gameInfoList .circle {
+    margin-top: 7px;
+}
+
+.gameInfoList a:hover .circle {
+    background: #ff8800;
+}
+
+.more .replace {
+    display: inline-block;
+    float: left;
+    height: 20px;
+    width: 20px;
+    background: url("/images/index/qietu.png") -74px -46px no-repeat;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.recommend {
+    width: 1000px;
+    float: left;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.recommendCon ul {
+    overflow: hidden;
+    height: 245px;
+}
+
+.recommendCon ul li {
+    width: 333px;
+    float: left;
+}
+
+.recommend .gameClassify {
+    width: 170px !important;
+}
+
+.recommendTitle {
+    font-size: 12px;
+    color: #0a0a0a;
+    font-weight: normal;
+    line-height: 22px;
+    width: 170px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.recommend .recommPrice {
+    margin-top: 4px;
+}
+
+.recommendCon .gameConDetail {
+    margin-left: 17px;
+}
+
+.Gameprice {
+    color: #ff8800;
+    font-size: 16px;
+}
+
+.directPrice {
+    color: #a9a9a9;
+}
+
+.directPrice i {
+    text-decoration: line-through;
+    font-style: normal;
+}
+
+.buyBtn {
+    /*margin-top: 8px;*/
+    overflow: hidden;
+}
+
+.purchase {
+    color: #ff8800;
+    padding: 5px 17px;
+    margin-top: 7px;
+    border: 1px solid #ff8800;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    float: left;
+}
+
+.shopRecommendCon {
+    position: relative;
+}
+
+.shopRecommend ul {
+    overflow: hidden;
+    height: 130px;
+    /*position: absolute;*/
+}
+
+.shopRecommend ul li {
+    width: 300px;
+    float: left;
+}
+
+.shopRecommend .gameConBoxImg {
+    height: 83px;
+    width: 83px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.shopRecommend .gameConBoxImg img {
+    height: 83px;
+    width: 83px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.shopRecommend .gameConDetail {
+    margin-top: 2px;
+}
+
+.shopRecommend .shopTitle {
+    /*float: left;*/
+    /*font-weight: normal;*/
+    max-width: 200px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.shopRecommend .gameClassify {
+    width: 190px !important;
+}
+
+.shopRecommend .recommPrice {
+    margin-top: 10px;
+}
+
+.sincerity {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.sincerityFlag {
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.sincerityTag {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+    display: block !important;
+    background: url("/images/index/qietu.png");
+}
+
+.huangguan {
+    width: 20px !important;
+    background-position: 0px -81px;
+}
+
+.guan {
+    background-position: -33px -82px;
+}
+
+.zhuan {
+    background-position: -58px -82px;
+}
+
+.xing {
+    background-position: -85px -82px;
+    margin-top: -1px;
+}
+
+.tradingVolume {
+    margin-top: 7px;
+}
+
+.tradingVolume .turnoverRate {
+    color: #ff8800;
+}
+
+.partnerList ul {
+    overflow: hidden;
+}
+
+.partnerList .partnerImgBox {
+    float: left;
+    width: 299px;
+    height: 73px;
+    margin: 30px 0px 18px 0px;
+}
+
+.verticalLinesBox {
+    height: 73px;
+    float: left;
+    margin: 30px 0px 18px 0px;
+}
+
+.partnerList .partnerImg {
+    display: block;
+    vertical-align: middle;
+    margin: 18px auto;
+}
+
+.couponBox {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    height: 362px;
+    width: 402px;
+}
+
+.couponBoxCon {
+    cursor: pointer;
+}
+
+.couponBoxConLink {
+    display: block;
+}
+
+.couponBoxCloseBtn {
+    height: 27px;
+    width: 28px;
+    position: absolute;
+    background: url("/images/index/gb.png") no-repeat;
+    right: 0px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.couponBoxDrop {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    z-index: 10001;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.couponBoxDrop .couponBoxDropCon {
+    height: 319px;
+    width: 324px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto auto;
+    background: url("/images/index/cg.png") no-repeat;
+}
+
+.couponBoxDrop .couponBoxDropConClose {
+    height: 27px;
+    width: 28px;
+    position: absolute;
+    background: url("/images/index/cggb.png") no-repeat;
+    right: 0px;
+    top: 38px;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.couponBoxDrop .couponBoxDropText {
+    margin-top: 168px;
+}
+
+.couponBoxDrop .receiveSuccess {
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+}
+
+.couponBoxDrop .couponBoxDropPrompt {
+    margin: 25px 24px;
+}
+
+.couponBoxDrop .receiveSuccessText {
+    font-size: 14px;
+    color: #555555;
+}
+
+.couponBoxDrop .couponBoxDropHome, .couponBoxDrop .couponBoxDropCollect {
+    margin: 0 3px;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.couponBoxDrop .rightIcon {
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    background: url(/img/texture.png) no-repeat center center;
+    /*     margin: 0 5px; */
+}
+.couponBoxDrop .instantlyUse{
+    text-align: center;
+}
+.couponBoxDrop .instantlyUseBtn {
+    width: 103px;
+    height: 29px;
+    background: #fde03e;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    color: #f76241;
+    font-size: 16px;
+    border:1px solid #fde03e;
+    font-family: "Microsoft YaHei"!important;
+    cursor: pointer;
+}

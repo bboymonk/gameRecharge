@@ -1,0 +1,1146 @@
+@charset "utf-8";
+/*通用*/
+body {
+    font: 12px "microsoft yahei", Arial, Helvetica, sans-serif;
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+ul, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, figcaption, section, input, figure, table, tr, td, tbody, tfoot, select {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    list-style: none;
+    font-family: "Microsoft YaHei" !important;
+}
+
+button{
+    font-family: "Microsoft YaHei" !important;
+}
+.main {
+    width: 1200px;
+    padding:10px 0px;
+    margin: 0px auto;
+    zoom: 1;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.lf {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ff8800;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-family: "microsoft yahei" !important;
+    font-size: 12px;
+    color: #d1d1d1;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-family: "microsoft yahei" !important;
+    font-size: 12px;
+    color: #d1d1d1;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-family: "microsoft yahei" !important;
+    font-size: 12px;
+    color: #d1d1d1;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-family: "microsoft yahei" !important;
+    font-size: 12px;
+    color: #d1d1d1;
+}
+
+/*头部导航*/
+.headerBox {
+    /*width: 100%;*/
+    height: 28px;
+    border: 1px solid #eeeeee;
+    background: #f7f7f7;
+}
+
+.headerCon {
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 28px;
+    overflow: hidden;
+    background:#f7f7f7;
+}
+
+.headerLogin, .headerRegister {
+    float: left;
+    color: #AA0000;
+    margin-left: 10px;
+}
+
+.headerUserName, .headerMyNews {
+    float: left;
+    margin-left: 15px;
+    display: none;
+}
+
+/*顶部右侧的链接菜单*/
+.headerCon ul {
+    overflow: hidden;
+}
+
+.headerCon ul li {
+    float: left;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    /*height: 28px;*/
+    line-height: 28px;
+    padding: 0 2px;
+}
+
+.dropTriangle {
+    display: inline-block;
+    padding-left: 10px;
+    padding-bottom: 6px;
+    background: url("/images/index/qietu.png") -86px -124px no-repeat;
+
+}
+
+.headerCon .spacer {
+    width: 1px;
+    height: 12px;
+    padding: 0;
+    margin: 9px 10px 0px 10px;
+    background: #d5d5d5;
+    overflow: hidden;
+}
+
+#mobileTerminal {
+    position: relative;
+
+}
+
+.erweima {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    z-index: 999;
+    right: 51px;
+    top: 50px;
+    background: #ffffff;
+    display: none;
+}
+
+.erweimaImg {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+}
+
+/*侧边固定定位的导航部分*/
+.sideGuide {
+    /*width:1200px;*/
+    position: fixed;
+    top: 240px;
+    right: 0;
+    z-index: 9999;
+}
+
+@media screen and (max-width: 1200px) {
+    .sideGuide {
+        display: none;
+    }
+}
+
+.sidebar {
+    /*position: absolute;*/
+    /*top: 240px;*/
+    /*left: 1200px;*/
+    height: 280px;
+    width: 76px;
+    /*border: 1px solid #c2c2c2;*/
+    background: #ffffff;
+    z-index: 9999;
+}
+
+.sidebar ul {
+    height: 280px;
+    width: 76px;
+}
+
+.sidebar ul li {
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 75px;
+    float: left;
+    text-align: center;
+    background: #ffffff;
+}
+
+.sidebar ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+
+.sidebar ul li:hover, .sidebar ul li.asideActive {
+    background: #ff8800 !important;
+    border-color: #ff8800;
+}
+
+.sidebar ul li a {
+    color: #ff8800;
+    display: block;
+    width: 76px;
+    padding: 15px 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+.sidebar ul li:hover a, .sidebar ul li.asideActive a {
+    color: #ffffff;
+}
+
+.sidebar ul li s {
+    background: url(/images/index/qietu.png) no-repeat;
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: auto;
+}
+
+.phoneService,.QQService {
+    position: relative;
+}
+
+.phoneService:hover .telNumberBox {
+    right: 0px;
+}
+.QQService:hover .QQNumberBox{
+    right: 0px;
+}
+.telNumberBox,.QQNumberBox{
+    position: absolute;
+    right: -220px;
+    top: -1px;
+    width: 220px;
+    background: #ff8800;
+    -webkit-transition: .3s linear;
+    -moz-transition: .3s linear;
+    -ms-transition: .3s linear;
+    -o-transition: .3s linear;
+    transition: .3s linear;
+}
+
+.telNumberCon,.QQNumberCon {
+    height: 74px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 72px;
+    overflow: hidden;
+}
+.QQphoneIIcon{
+    background: url(../images/qietu.png) -105px 0px no-repeat;
+    display: block;
+    float: left;
+    width: 27px;
+    height: 27px;
+    margin: 23px 10px 0px 17px;
+}
+.phoneIIcon {
+    background: url(../images/qietu.png) 0px 0px no-repeat;
+    display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin: 23px 10px 0px 17px;
+}
+
+.telNumberConText,.QQNumberConText {
+    float: left;
+}
+
+.sidebar ul .QQService s {
+    background-position: -71px 0px;
+}
+
+.sidebar ul .QQService:hover s, .sidebar ul .QQService.asideActive s {
+    background-position: -106px 0px;
+}
+
+.sidebar ul .phoneService s {
+    background-position: -37px 0px;
+}
+
+.sidebar ul .suggest s {
+    background-position: -37px -45px;
+}
+
+.sidebar ul .suggest:hover s, .sidebar ul .suggest.asideActive s {
+    background-position: 0px -45px;
+}
+
+.sidebar ul .top s {
+    width: 28px;
+    height: 30px;
+    background-position: -39px -111px;
+}
+
+.sidebar ul .top:hover s, .sidebar ul .top.asideActive s {
+    width: 28px;
+    height: 30px;
+    background-position: 0px -111px;
+}
+
+/*logo及其搜索部分*/
+#top_main {
+    zoom: 1;
+    width: 1200px;
+    height: 110px;
+    padding-top: 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: inline-block;
+    padding-left: 15px;
+    height: 80px;
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+#search_box {
+    padding: 20px 0px 0 40px;
+    position: relative;
+    margin-left: 50px;
+}
+
+div.search {
+    /*width:500px;*/
+    height: 34px;
+    margin-bottom: 5px;
+    /*border: 3px solid #E4393C;*/
+    /*background-color:#E4393C;*/
+}
+
+.text {
+    float: right;
+    width: 450px;
+    padding-left: 5px;
+    background-color: #fff;
+    height: 34px;
+    color: #999;
+    border: 2px solid #AA0000;
+}
+
+#top_main ul {
+    overflow: hidden;
+}
+
+#top_main ul li {
+    float: left;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    height: 34px;
+    padding: 0 2px;
+    width: 80px;
+}
+
+#top_main ul li a {
+    line-height: 34px;
+}
+
+.drop-down {
+    position: relative;
+}
+
+.drop-down:after {
+    position: absolute;
+    top: 47%;
+    width: 0;
+    height: 0;
+    right: 0;
+    /*margin-left: 2px;*/
+    content: " ";
+    border-top: 4px solid #cccccc;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+#txtSearch .verticalLine {
+    width: 1px;
+    height: 12px;
+    padding: 0;
+    margin: 12px 5px 0px 5px;
+    background: #AA0000;
+    overflow: hidden;
+}
+
+.searchBox {
+    height: 34px;
+    width: 210px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+#txtSearch .searchInput {
+    height: 16px;
+    width: 100%;
+    padding-left: 20px;
+    background: url("/images/index/qietu.png") -113px -47px no-repeat;
+    line-height: 16px;
+    outline: none;
+    color: #AA0000;
+}
+
+input.button {
+    width: 104px;
+    background: #ff8800;
+    /*border-radius: 5px;*/
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    float: right;
+    height: 35px;
+    cursor: pointer;
+}
+
+#searchBut{
+    width: 104px;
+    background: #AA0000;
+    /*border-radius: 5px;*/
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    float: right;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+.searchBoxDrop {
+    display: none;
+}
+
+.gmeNameBox {
+    width: 866px;
+    border: 2px solid #ff8800;
+    background: #ffffff;
+    position: absolute;
+    top: 70px;
+    left: -171px;
+    z-index: 101;
+}
+
+.goodsTypeBox {
+    width: 790px;
+    border: 2px solid #ff8800;
+    background: #ffffff;
+    position: absolute;
+    top: 70px;
+    left: -95px;
+    z-index: 10;
+}
+
+.goodsTypeBox .triangle {
+    left: 267px!important;
+}
+
+.fullServiceBox {
+    width: 766px;
+    border: 2px solid #ff8800;
+    background: #ffffff;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    z-index: 10;
+}
+
+.fullServiceBox .triangle {
+    left: 338px!important;
+}
+
+.searchBoxDrop .triangle {
+    width: 18px;
+    height: 10px;
+    background: url("/images/index/jj.png") no-repeat;
+    position: absolute;
+    top: -10px;
+    left: 250px;
+}
+
+.searchBoxCon {
+    /*width: 807px;*/
+    /*padding:0px  20px;*/
+    box-sizing: border-box;
+}
+
+.searchBoxCon .searchBoxTitle {
+    margin: 0px 20px;
+    line-height: 45px;
+    border-bottom: 1px solid #AA0000;
+}
+
+.searchBoxCon .searchBoxTitle a {
+    color: #ff8800;
+}
+
+.searchBoxCon .searchBoxTitle > a {
+    margin-left: 20px;
+}
+
+.searchBoxCon .searchBoxTitle .closeButton {
+    display: inline-block;
+    width: 17px;
+    height: 19px;
+    background: url("/images/index/qietu.png") -113px -83px;
+    margin-top: 14px;
+    margin-left: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.quickSearch {
+    margin: 20px 20px;
+    margin-bottom: 0px;
+}
+
+.quickSearchInput {
+    height: 28px;
+    border: 1px solid #d0d0d0;
+    width: 225px;
+    padding: 0px 5px;
+    margin-right: 20px;
+}
+
+.quickSearchBtn {
+    height: 30px;
+    background: #ff8800;
+    color: #ffffff;
+    width: 88px;
+    font-family: sans-serif;
+    cursor: pointer;
+
+}
+
+.hotGame {
+    float: left;
+    line-height: 38px;
+    border-bottom: 2px solid #ff8800;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.letterTab {
+    height: 40px;
+    /*float: left;*/
+}
+
+.letterTab > li {
+    line-height: 40px;
+    height: 40px !important;
+    width: 30px !important;
+    float: left;
+    padding: 0px !important;
+}
+
+.letterTab > li a {
+    display: block;
+    height: 26px;
+    line-height: 25px !important;
+    width: 26px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.letterTab > li a:hover {
+    border-radius: 50% !important;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: #ff8800 !important;
+    color: #ffffff !important;
+}
+
+.letterTab > li a.active {
+    border-radius: 50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: #ff8800;
+    color: #ffffff;
+}
+
+.noLetterBox {
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.hotWord {
+    color: #ff0018 !important;
+}
+
+/*************************************************/
+.tabHead, .tab {
+    overflow: hidden;
+    zoom: 1;
+    /*background: #f9f9f9;*/
+    /*margin-top: 10px;*/
+    /*height: 40px;*/
+    padding-left: 20px;
+    /*padding-bottom: 20px;*/
+}
+
+.goodsTypeInfo {
+    line-height: 40px;
+    border-bottom: 1px solid #cccccc;
+    overflow: hidden;
+    width:750px;
+}
+
+.goodsTypeTitle {
+    width: 80px;
+    line-height: 40px;
+    display: block;
+    float: left;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.tabCon {
+    float: left;
+    width:650px;
+    /*word-wrap: break-word;*/
+    /*word-break: break-all;*/
+}
+
+.option .leftCurrent {
+    display: inline-block;
+    float: left;
+    height: 7px;
+    width: 3px;
+    background: url("../images/qietu.png") -143px -122px;
+    margin: 18px 5px 0px 5px;
+}
+
+.optionlist {
+    margin-top: 8px;
+    float: left;
+    display: block;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    height: 25px;
+    line-height: 25px;
+    width: 80px;
+    padding: 0px 2px;
+}
+
+/********************************************/
+
+.IOSSearch {
+    background: none !important;
+}
+
+ul.tab li {
+    float: left;
+    color: #969696;
+    height: 40px;
+    cursor: pointer;
+    line-height: 40px !important;
+    margin-right: 40px;
+}
+
+ul.tab li.current {
+    color: #ff8800;
+    height: 38px !important;
+    line-height: 38px !important;
+    border-bottom: 2px solid #ff8800;
+}
+
+.content {
+    border-top-width: 0;
+    overflow: hidden;
+    margin: 0 15px 20px 20px;
+    min-height: 40px;
+}
+
+.content .tabCon {
+    overflow: hidden;
+    display: none;
+}
+
+.content .option {
+    line-height: 25px;
+    /*margin-right:30px;*/
+    padding: 20px 30px 0px 30px;
+    padding-left: 0;
+}
+
+.content .option > a {
+    width: 95px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.content .leftCurrent {
+    display: inline-block;
+    float: left;
+    height: 7px;
+    width: 3px;
+    background: url("/images/index/qietu.png") -143px -122px;
+    margin: 6px 5px 0px 0px;
+}
+
+.content a {
+    float: left;
+    display: block;
+    /*width: 83px;*/
+    text-align: left;
+    line-height: 18px;
+}
+
+.content a.sGameName {
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+    line-height: 20px;
+}
+
+.content a.sGoodsType {
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.content a.sGameArea {
+    width: 83px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.optionActive {
+    background: #ff8800;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.option > a.optionActive:hover {
+    color: #ffffff;
+}
+
+/*热门搜索*/
+div.hot_words {
+    float: left;
+    height: 30px;
+    color: #999;
+    overflow: hidden;
+    padding-left: 25px;
+    max-width: 700px;
+}
+
+div.hot_words span, div.hot_words a {
+    float: left;
+    font-weight: 400;
+    margin-right: 20px;
+    line-height: 30px;
+    color: #b4b4b4;
+}
+
+div.hot_words span {
+    margin: 0px;
+}
+
+/*主导航*/
+#nav {
+    width: 100%;
+    height: 45px;
+    background: #AA0000;
+
+}
+
+.navBox {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.navBox .nav_items {
+    overflow: hidden;
+    width:1200px;
+    background:#AA0000;
+}
+
+.navBox .nav_items li {
+    float: left;
+    width: 216px;
+    height: 45px;
+    margin-right: 1px;
+}
+
+.navBox .nav_items li .navLink {
+    display: block;
+    height: 45px;
+    /*width: 216px;*/
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 45px;
+}
+
+.navBox .nav_items li a.navLink:hover {
+    background: #d67200;
+}
+
+.navActive {
+    background: #AA0000;
+}
+
+#IOSChargeBox {
+    position: absolute;
+    width: 833px;
+    left: 0px;
+    border: 1px solid #ff8800;
+    border-top: 0px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+}
+
+/*页脚*/
+#foot_box {
+    height: 280px;
+    width: 100%;
+    border-top: 1px #DDD solid;
+    /*border-bottom: 1px #F1F1F1 solid;*/
+    margin-top: 12px;
+    /*padding-top: 14px;*/
+    background: #e6e6e6;
+    box-sizing: border-box;
+}
+
+.footerContain {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*padding-left: 90px;*/
+    box-sizing: border-box;
+    background: #e6e6e6;
+    height:280px;
+}
+
+#foot_box ul {
+    width: 180px;
+    float: left;
+}
+
+#foot_box ul li {
+    line-height: 28px;
+}
+
+#foot_box ul li:first-child {
+    margin-top: 37px;
+    margin-bottom: 15px;
+    color: #494949;
+}
+
+#foot_box ul li b {
+    line-height: 16px;
+    font-size: 14px;
+    color: #494949;
+    font-weight: normal;
+}
+
+#foot_box a {
+    color: #767676;
+}
+
+#foot_box a:hover {
+    color: #494949 !important;
+    text-decoration: underline;
+}
+
+#foot_box .service, .scanCode {
+    height: 61px;
+    /*text-align:center;*/
+    /*padding-top:40px;*/
+}
+
+#foot_box .service {
+    margin-left: 0px !important;
+    text-align: left !important;
+    margin-bottom: 10px!important;
+}
+
+#foot_box .service .serviceImg {
+    margin:10px 0px 0px 40px;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #fff;
+}
+
+#foot_box .service .serviceImg img {
+    height: 32px;
+    width: 32px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 9px 10px;
+}
+
+.PhoneNumber {
+    color: #767676;
+}
+
+#foot_box .scanCode {
+    height: 100px;
+    text-align: center;
+    /*padding-top: 20px;*/
+    margin-bottom: 0px !important;
+}
+
+#foot_box .scanCode .scanCodeImg {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+
+#foot_box .scanCode .scanCodeImg > img {
+    width: 100px;
+    height: 100px;
+}
+
+#foot_box p {
+    text-align: center;
+    color: #888888;
+    line-height: 28px;
+}
+
+.copyright {
+    clear: both;
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px;
+    line-height: 20px;
+    /*padding-left: -90px;*/
+}
+
+.copyright p {
+    line-height: 20px !important;
+}
+
+.copyright p a {
+    color: #888888 !important;
+}
+
+.nofindBox {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.nofindCon {
+    background: #ffffff;
+    height: 425px;
+    width: 830px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    border-radius: 5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.addClose {
+    /*float: right;*/
+    position: absolute;
+    cursor: pointer;
+    right: 18px;
+    top: 18px;
+    height: 17px;
+    width: 17px;
+    background: url("/images/index/qietu.png") -113px -116px no-repeat;
+}
+
+.feedbackHeaderText {
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    margin: 35px auto;
+}
+
+.facdbackCon {
+    width: 510px;
+    margin: 0 auto;
+}
+
+.grounpsLine {
+    overflow: hidden;
+    line-height: 36px;
+    margin: 5px 0px;
+}
+
+.leftName {
+    width: 70px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.radioCheck {
+    float: left;
+    /*margin-right: 15px;*/
+    width: 70px
+}
+
+#PCTerminal, #androidTerminal, #appleTerminal, #game, #gameZone, #server {
+    float: left;
+    margin-top: 13px;
+}
+
+.facdbackGameName, .gameServiceName, .facdbackVerifyCode {
+    border: 1px solid #a0b4c5;
+    box-sizing: border-box;
+    height: 28px;
+    padding-left: 5px;
+    float: left;
+    margin-top: 4px;
+}
+
+.facdbackGameName {
+    width: 220px;
+}
+
+.gameServiceName {
+    width: 400px;
+}
+
+.facdbackVerifyCode {
+    width: 80px;
+}
+
+.facdbackVerifyCodeFrame {
+    height: 28px;
+    width: 50px;
+    display: block;
+    margin: 0px 10px;
+    float: left;
+}
+
+.changeOther {
+    float: left;
+    line-height: 14px;
+    margin-top: 19px;
+}
+
+.confirmSubmit {
+    margin: 30px 0px 0px 100px;
+}
+
+.confirmSubmitBtn {
+    height: 30px;
+    width: 128px;
+    background: url("/images/index/tankann.png") no-repeat;
+    border: none;
+    padding: 0px;
+    line-height: 30px;
+    color: #ffffff;
+    font-family: "Microsoft YaHei" !important;
+}
+
+.drop-down a {
+    width: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: block;
+}
+
+.noSearch p {
+    text-align: center;
+    line-height: 40px;
+}
+
+.noSearch p a {
+    text-decoration: none;
+}
+
+.historyCon a {
+    margin-right: 15px;
+}
+
+.field-suggestform-verifycode label {
+    display: none;
+}
+
+.help-block-error {
+    /*margin-left: 30px;*/
+    /*float:left;*/
+}
+
+#foot_box .certification {
+    text-align: center;
+}
+
+#foot_box .certification img {
+    margin-top: 10px;
+}

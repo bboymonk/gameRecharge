@@ -1,0 +1,17 @@
+spring:
+  datasource:
+      url: jdbc:mysql://127.0.0.1:3306/wjb
+      username: root
+      password: wjb
+      type: com.alibaba.druid.pool.DruidDataSource
+  freemarker:
+    suffix: .html
+    template-loader-path: classpath:/templates/
+    charset: UTF-8
+    cache: false
+    request-context-attribute: request
+    expose-request-attributes: true
+#=======================================这里注意mybatis是写在最前面的，和spring并列=====================================#
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:/mybatis-config.xml
