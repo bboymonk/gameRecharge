@@ -18,10 +18,6 @@ public class WjbController extends BaseController{
     @Autowired
     private UserService userService;
 
-    @GetMapping("abc")
-    public String demo(){
-        return "abc";
-    }
     @GetMapping("navigation")
     public String navigation(){
         return "navigation";
@@ -29,7 +25,7 @@ public class WjbController extends BaseController{
 
     @GetMapping("index")
     public String test(){
-        return "index";
+        return "index/index";
     }
 
     @GetMapping("paging")
