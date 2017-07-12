@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            position: relative;width:200px;left: 50px;top: 50px;
+        }
+        ul{
+            background: #494949;color: #FFFFFF;border-right-width: 0px;
+            list-style: none;margin: 9px;padding: 15px 0px;
+        }
+        li{
+            height: 30px;line-height: 30px;display: block;padding-left: 12px;cursor:pointer;font-size: 14px;
+            position: relative;
+        }
+        li.active{
+            background: #FFFFFF;
+        }
+        li span:hover{
+            color: #ff670f;
+        }
+        .none{
+            display: none;
+        }
+        #sub{
+            position: absolute;
+            width: 600px; border: 1px solid #FFFFFF;
+            background: #FFFFFF;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+            top: 0;
+            left:200px;
+            margin: 0px;padding: 10px;
+            box-sizing: border-box;
+        }
+        .sub_content a{
+            font-size: 12px;
+            color: #a9a9a9;
+            text-decoration: none;
+        }
+        .sub_content dd a{
+            border-left: 1px solid #FFFFFF;
+            padding:0px 10px;
+            margin: 4px 0px;
+        }
+        .sub_content dl{
+            overflow: hidden;
+        }
+        .sub_content dt{
+            float: left;
+            width: 70px;
+            font-weight: bold;
+            position: relative;
+            clear: left;
+        }
+        .sub_content dd{
+            float: left;
+            margin-left: 5px;
+            border-top: 1px solid #FFFFFF;
+            margin-bottom: 5px;
+        }
+        .sub_content dt i{
+            width: 4px;
+            height: 14px;
+            font: 400 9px/14px contextual;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+   <div id="test" class="wrap">
+       <ul>
+           <li data-id="a">
+               <span>家用电器</span>
+           </li>
+           <li data-id="b">
+               <span>家电/数码/儿童</span>
+           </li>
+           <li data-id="c">
+               <span>家电/数码/儿童</span>
+           </li>
+           <li data-id="d">
+               <span>家电/数码/儿童</span>
+           </li>
+           <li data-id="e">
+               <span>家电/数码/儿童</span>
+           </li>
+           <li data-id="f">
+               <span>家电/数码/儿童</span>
+           </li>
+       </ul>
+       <div id="sub" class="none">
+            <div id="a" class="sub_content none">
+                <dl>
+                    <dt>
+                        <a href="#" target="_blank">电视<i>&gt;</i></a>
+                    </dt>
+                    <dd>
+                        <a href="#" target="_blank">合资品牌</a>
+                        <a href="#" target="_blank">国产品牌</a>
+                        <a href="#" target="_blank">互联网品牌</a>
+                    </dd>
+                </dl>
+            </div>
+            <div id="b" class="sub_content none">
+                <dl>
+                    <dt>
+                        <a href="#" target="_blank">电视<i>&gt;</i></a>
+                    </dt>
+                    <dd>
+                        <a href="#" target="_blank">合资品牌</a>
+                        <a href="#" target="_blank">国产品牌</a>
+                        <a href="#" target="_blank">互联网品牌</a>
+                    </dd>
+                </dl>
+            </div>
+            <div id="c" class="sub_content none">
+                <dl>
+                    <dt>
+                        <a href="#" target="_blank">电视<i>&gt;</i></a>
+                    </dt>
+                    <dd>
+                        <a href="#" target="_blank">合资品牌</a>
+                        <a href="#" target="_blank">国产品牌</a>
+                        <a href="#" target="_blank">互联网品牌</a>
+                    </dd>
+                </dl>
+            </div>
+            <div id="d" class="sub_content none">
+                <dl>
+                    <dt>
+                        <a href="#" target="_blank">电视<i>&gt;</i></a>
+                    </dt>
+                    <dd>
+                        <a href="#" target="_blank">合资品牌</a>
+                        <a href="#" target="_blank">国产品牌</a>
+                        <a href="#" target="_blank">互联网品牌</a>
+                    </dd>
+                </dl>
+            </div>
+            <div id="e" class="sub_content none">
+                <dl>
+                    <dt>
+                        <a href="#" target="_blank">电视<i>&gt;</i></a>
+                    </dt>
+                    <dd>
+                        <a href="#" target="_blank">合资品牌</a>
+                        <a href="#" target="_blank">国产品牌</a>
+                        <a href="#" target="_blank">互联网品牌</a>
+                    </dd>
+                </dl>
+            </div>
+            <div id="f" class="sub_content none">
+                <dl>
+                    <dt>
+                        <a href="#" target="_blank">电视<i>&gt;</i></a>
+                    </dt>
+                    <dd>
+                        <a href="#" target="_blank">合资品牌</a>
+                        <a href="#" target="_blank">国产品牌</a>
+                        <a href="#" target="_blank">互联网品牌</a>
+                    </dd>
+                </dl>
+            </div>
+       </div>
+   </div>
+<script src="/js/menu/menu.js"></script>
+</body>
+</html>

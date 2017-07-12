@@ -18,9 +18,9 @@ public class WjbController extends BaseController{
     @Autowired
     private UserService userService;
 
-    @GetMapping("demo")
+    @GetMapping("abc")
     public String demo(){
-        return "demo";
+        return "abc";
     }
     @GetMapping("navigation")
     public String navigation(){

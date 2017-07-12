@@ -12,6 +12,7 @@
     <script src="//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
     <script src="//cdn.bootcss.com/angular-md5/0.1.10/angular-md5.min.js"></script>
 </head>
+
 <body>
 <div ng-app="myApp" ng-controller="myCtrl">
     <button type="button" class="btn btn-sm btn-danger" ng-click="query()">搜索</button>
@@ -48,7 +49,6 @@
         first-text="&laquo;"
         last-text="&raquo;">
     </ul>
-    <button ng-click="goto(number)">goto</button>
 
 
 </div>
@@ -60,30 +60,24 @@
         $scope.currentPage = 1;//初始当前页
         $scope.maxSize = 7; //最多显示多少页码
         $scope.size=5;
-
         $scope.setPage = function (pageNo) {
             $scope.currentPage = pageNo;
         };
         $scope.pageChanged = function () {
             $scope.query();
         };
-
         $scope.query = function query() {
             var URL = "/hello?pageNum="+$scope.currentPage+"&size="+$scope.size;
             $http.get(URL).then(function (response) {
                 $scope.list = response.data.DATA.list;
                 console.log($scope.list);
                 $scope.totalItems = response.data.DATA.total;
-
             });
         }
         $scope.query();
         $scope.goto = function (number) {
             $scope.currentPage = number;
         }
-
-
-
     });
 </script>
 
