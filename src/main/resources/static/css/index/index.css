@@ -343,7 +343,7 @@
     display: block;
     height: 17px;
     width: 17px;
-    background: url("/img/qietu.png") -113px -116px no-repeat;
+    background: url("/images/index/qietu.png") -113px -116px no-repeat;
     margin: 9px 20px 0px 0px;
     cursor: pointer;
 }
@@ -368,13 +368,13 @@
 }
 
 .main .InfoTitle {
-    border-bottom: 100px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
     overflow: hidden;
     line-height: 50px;
 }
 
 .main .title {
-    color: #ff8800;
+    color: #AA0000;
     float: left;
     font-size: 18px;
 }
@@ -504,8 +504,8 @@
 
 .gameConDetail .chargeGeneration {
     background-color: #fff;
-    border: 1px solid #f99170;
-    color: #f99170;
+    border: 1px solid #AA0000;
+    color: #AA0000;
 }
 
 .gameConDetail .chargeGeneration:hover {
@@ -666,7 +666,7 @@
 }
 
 .Gameprice {
-    color: #ff8800;
+    color: #AA0000;
     font-size: 16px;
 }
 
@@ -685,10 +685,10 @@
 }
 
 .purchase {
-    color: #ff8800;
+    color: #AA0000;
     padding: 5px 17px;
     margin-top: 7px;
-    border: 1px solid #ff8800;
+    border: 1px solid #AA0000;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -919,7 +919,7 @@
     display: inline-block;
     width: 6px;
     height: 10px;
-    background: url(/img/texture.png) no-repeat center center;
+    background: url(/images/gt.png) no-repeat center center;
     /*     margin: 0 5px; */
 }
 .couponBoxDrop .instantlyUse{

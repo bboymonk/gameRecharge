@@ -3,441 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="/css/index/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="/css/index/data_style.css" type="text/css" rel="stylesheet"/>
-    <link href="/css/index/axure_rp_page.css" type="text/css" rel="stylesheet"/>
-    <script src="/js/index/jquery-1.7.1.min.js"></script>
-    <script src="/js/index/jquery-ui-1.8.10.custom.min.js"></script>
+    <link href="../css/index/public.css" rel="stylesheet">
+    <link href="../css/index/index.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
+<!--头部-->
+<header class="headerBox">
+    <div class="headerCon">
+        <span class="welcome lf">
+        	您好！欢迎来到游戏充值！
+    	</span>
+        <a class="headerLogin" href="/account/login.html">登录</a>
+        <a class="headerRegister" href="/register.html">注册</a>
 
-<div id="base" class="">
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u0" class="ax_default box_3">
-        <div id="u0_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u1" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
+        <div class="rt">
+            <ul>
+                <li class="myOrder"><a href="/member/personal/web-order.html">我的订单</a></li>
+                <li class="spacer"></li>
+                <li class="personalCenter"><a href="/member/personal.html">个人中心</a><span class="dropTriangle"></span></li>
+                <li class="spacer"></li>
+                <li class="helpCenter"><a href="/help.html" target="_blank">帮助中心</a></li>
+            </ul>
         </div>
     </div>
+</header>
+<!--搜索框-->
+<div id="top_main">
+    <a href="http://www.daminghu.co" class="lf logo">
+        <img src="/images/oldlogo.png" alt="LOGO"/>
+    </a>
 
-    <!-- Unnamed (Image) -->
-    <div id="u2" class="ax_default image">
-        <img id="u2_img" class="img " src="img/index/u2.png"/>
-        <!-- Unnamed () -->
-        <div id="u3" class="text">
-            <p><span>logo</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u4" class="ax_default label">
-        <div id="u4_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u5" class="text">
-            <p><span>我的订单</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u6" class="ax_default label">
-        <img id="u6_img" class="img " src="img/index/u6.png"/>
-        <!-- Unnamed () -->
-        <div id="u7" class="text">
-            <p><span>帮助</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u8" class="ax_default label">
-        <div id="u8_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u9" class="text">
-            <p><span>个人中心</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u10" class="ax_default label">
-        <div id="u10_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u11" class="text">
-            <p><span>注册</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u12" class="ax_default label">
-        <div id="u12_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u13" class="text">
-            <p><span>登录</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u14" class="ax_default label">
-        <div id="u14_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u15" class="text">
-            <p><span>热门游戏</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Horizontal Line) -->
-    <div id="u16" class="ax_default line">
-        <img id="u16_img" class="img " src="img/index/u16.png"/>
-        <!-- Unnamed () -->
-        <div id="u17" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u18" class="ax_default button">
-        <div id="u18_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u19" class="text">
-            <p><span>搜索</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Group) -->
-    <div id="u20" class="ax_default" data-left="334" data-top="75" data-width="541" data-height="35">
-
-        <!-- Unnamed (Rectangle) -->
-        <div id="u21" class="ax_default box_1">
-            <div id="u21_div" class=""></div>
-            <!-- Unnamed () -->
-            <div id="u22" class="text" style="display:none; visibility: hidden">
-                <p><span></span></p>
+    <div id="search_box" class="rt">
+        <div class="search">
+            <div id="txtSearch" class="text">
+                <div class="lf searchBox">
+                    <input type="text" class="searchInput" id="searchInput" placeholder="请输入游戏名/商品名/店铺名称"/>
+                </div>
+                <div class="" id="searchBut">
+                    搜索
+                </div>
             </div>
-        </div>
-
-        <!-- Unnamed (Text Field) -->
-        <div id="u23" class="ax_default text_field">
-            <input id="u23_input" type="text" value=""/>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u24" class="ax_default placeholder">
-        <img id="u24_img" class="img " src="img/index/u24.png"/>
-        <!-- Unnamed () -->
-        <div id="u25" class="text">
-            <p><span>请输入游戏名/商品/面额</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u26" class="ax_default button">
-        <img id="u26_img" class="img " src="img/index/u26.png"/>
-        <!-- Unnamed () -->
-        <div id="u27" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u28" class="ax_default image">
-        <img id="u28_img" class="img " src="img/index/u28.png"/>
-        <!-- Unnamed () -->
-        <div id="u29" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u30" class="ax_default label">
-        <img id="u30_img" class="img " src="img/index/u30.png"/>
-        <!-- Unnamed () -->
-        <div id="u31" class="text">
-            <p><span>王者荣耀</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u32" class="ax_default button">
-        <img id="u32_img" class="img " src="img/index/u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u33" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u34" class="ax_default image">
-        <img id="u34_img" class="img " src="img/index/u34.png"/>
-        <!-- Unnamed () -->
-        <div id="u35" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u36" class="ax_default label">
-        <img id="u36_img" class="img " src="img/index/u36.png"/>
-        <!-- Unnamed () -->
-        <div id="u37" class="text">
-            <p><span>沙巴克传奇</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u38" class="ax_default button">
-        <img id="u38_img" class="img " src="img/index/u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u39" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u40" class="ax_default image">
-        <img id="u40_img" class="img " src="img/index/u40.png"/>
-        <!-- Unnamed () -->
-        <div id="u41" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u42" class="ax_default label">
-        <img id="u42_img" class="img " src="img/index/u42.png"/>
-        <!-- Unnamed () -->
-        <div id="u43" class="text">
-            <p><span>龙之谷</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u44" class="ax_default button">
-        <img id="u44_img" class="img " src="img/index/u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u45" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u46" class="ax_default image">
-        <img id="u46_img" class="img " src="img/index/u46.png"/>
-        <!-- Unnamed () -->
-        <div id="u47" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u48" class="ax_default label">
-        <img id="u48_img" class="img " src="img/index/u48.png"/>
-        <!-- Unnamed () -->
-        <div id="u49" class="text">
-            <p><span>皇室战争</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u50" class="ax_default label">
-        <div id="u50_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u51" class="text">
-            <p><span>热门推荐</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Horizontal Line) -->
-    <div id="u52" class="ax_default line">
-        <img id="u52_img" class="img " src="img/index/u16.png"/>
-        <!-- Unnamed () -->
-        <div id="u53" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u54" class="ax_default button">
-        <img id="u54_img" class="img " src="img/index/u54.png"/>
-        <!-- Unnamed () -->
-        <div id="u55" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u56" class="ax_default image">
-        <img id="u56_img" class="img " src="img/index/u28.png"/>
-        <!-- Unnamed () -->
-        <div id="u57" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u58" class="ax_default label">
-        <img id="u58_img" class="img " src="img/index/u58.png"/>
-        <!-- Unnamed () -->
-        <div id="u59" class="text">
-            <p><span>王者荣耀 6480点券</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u60" class="ax_default button">
-        <img id="u60_img" class="img " src="img/index/u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u61" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u62" class="ax_default image">
-        <img id="u62_img" class="img " src="img/index/u34.png"/>
-        <!-- Unnamed () -->
-        <div id="u63" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u64" class="ax_default label">
-        <img id="u64_img" class="img " src="img/index/u64.png"/>
-        <!-- Unnamed () -->
-        <div id="u65" class="text">
-            <p><span>沙巴克传奇 6480钻石</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u66" class="ax_default button">
-        <img id="u66_img" class="img " src="img/index/u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u67" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u68" class="ax_default image">
-        <img id="u68_img" class="img " src="img/index/u40.png"/>
-        <!-- Unnamed () -->
-        <div id="u69" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u70" class="ax_default label">
-        <img id="u70_img" class="img " src="img/index/u70.png"/>
-        <!-- Unnamed () -->
-        <div id="u71" class="text">
-            <p><span>龙之谷</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u72" class="ax_default button">
-        <img id="u72_img" class="img " src="img/index/u32.png"/>
-        <!-- Unnamed () -->
-        <div id="u73" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u74" class="ax_default image">
-        <img id="u74_img" class="img " src="img/index/u46.png"/>
-        <!-- Unnamed () -->
-        <div id="u75" class="text" style="display:none; visibility: hidden">
-            <p><span></span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u76" class="ax_default label">
-        <img id="u76_img" class="img " src="img/index/u76.png"/>
-        <!-- Unnamed () -->
-        <div id="u77" class="text">
-            <p><span>皇室战争</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u78" class="ax_default label">
-        <img id="u78_img" class="img " src="img/index/u78.png"/>
-        <!-- Unnamed () -->
-        <div id="u79" class="text">
-            <p><span style="color:#CC3333;">￥560.00</span><span style="color:#666666;"> </span><span style="color:#949494;">/ ￥648.00</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u80" class="ax_default button">
-        <div id="u80_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u81" class="text">
-            <p><span>购买</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u82" class="ax_default label">
-        <img id="u82_img" class="img " src="img/index/u78.png"/>
-        <!-- Unnamed () -->
-        <div id="u83" class="text">
-            <p><span style="color:#CC3333;">￥530.00</span><span style="color:#666666;"> </span><span style="color:#949494;">/ ￥648.00</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u84" class="ax_default button">
-        <div id="u84_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u85" class="text">
-            <p><span>购买</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u86" class="ax_default label">
-        <img id="u86_img" class="img " src="img/index/u78.png"/>
-        <!-- Unnamed () -->
-        <div id="u87" class="text">
-            <p><span style="color:#CC3333;">￥530.00</span><span style="color:#666666;"> </span><span style="color:#949494;">/ ￥648.00</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u88" class="ax_default button">
-        <div id="u88_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u89" class="text">
-            <p><span>购买</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u90" class="ax_default label">
-        <img id="u90_img" class="img " src="img/index/u78.png"/>
-        <!-- Unnamed () -->
-        <div id="u91" class="text">
-            <p><span style="color:#CC3333;">￥540.00</span><span style="color:#666666;"> </span><span style="color:#949494;">/ ￥648.00</span></p>
-        </div>
-    </div>
-
-    <!-- Unnamed (Rectangle) -->
-    <div id="u92" class="ax_default button">
-        <div id="u92_div" class=""></div>
-        <!-- Unnamed () -->
-        <div id="u93" class="text">
-            <p><span>购买</span></p>
         </div>
     </div>
 </div>
+<!--主体-->
+<section id="main" class="main clear">
+    <div class="floor">
+        <div class="popularGame">
+            <div class="InfoTitle">
+                <div class="title">热门游戏</div>
+            </div>
+            <div class="gameContain">
+                <ul>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-2753.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-2753.html" target="_blank"><h5 class="gameTitle">王者荣耀</h5></a>
 
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-2753.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-4487.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20170105/be731b6c-2097-483a-7eff-fcc5cb255b0c.png"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-4487.html" target="_blank"><h5 class="gameTitle">寻情剑</h5></a>
 
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-4487.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-3657.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/fd07d3c9-d8ae-cca0-8435-3b3121a0d1dc.jpg"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-3657.html" target="_blank"><h5 class="gameTitle">城市精灵GO</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-3657.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-176.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/12e81253-54bc-1b24-bfd5-e69702a9cfa3.jpg"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-176.html" target="_blank"><h5 class="gameTitle">部落冲突</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-176.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-4056.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/70ad5731-5187-3924-99a7-a4fc71f9f8bd.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-4056.html" target="_blank"><h5 class="gameTitle">少年西游记HD</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-4056.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-3350.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/212c7979-a9de-a5ac-cc1a-868926025a77.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-3350.html" target="_blank"><h5 class="gameTitle">丧尸之战</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-3350.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-4198.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/60fc91f9-39c0-bdea-e96c-deb97a97639c.jpg"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-4198.html" target="_blank"><h5 class="gameTitle">王国纪元</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-4198.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-3840.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/8e38fd61-1acb-4d26-772a-f06fcd071d94.jpg"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-3840.html" target="_blank"><h5 class="gameTitle">苍穹绝仙</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-3840.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-2919.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161226/11b58565-48d8-2a98-e2ee-6c4bd026be75.png"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-2919.html" target="_blank"><h5 class="gameTitle">沙巴克传奇</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-2919.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-2416.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/6e48d7ae-df12-7e2a-625d-9763e6a67b87.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-2416.html" target="_blank"><h5 class="gameTitle">王者荣耀</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-2919.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-4490.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20170105/db47e51c-fe1b-d008-6b12-3d066d12ffd6.png"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-4490.html" target="_blank"><h5 class="gameTitle">兽人之战</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-4490.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/goods-4489.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20170105/7ae9a2d8-3064-327b-e6e3-e4048ee1f89d.png"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/goods-4489.html" target="_blank"><h5 class="gameTitle">天天打蛋蛋</h5></a>
+
+                                <div class="gameClassify">
+                                    <a class="chargeGeneration"
+                                       href="/goods-4489.html?pid=2" target="_blank">购买</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="floor">
+        <div class="recommend">
+            <div class="InfoTitle">
+                <div class="title">大明湖推荐</div>
+                <div class="more">
+                </div>
+            </div>
+            <div class="recommendCon">
+                <ul>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/details-815.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20170105/be731b6c-2097-483a-7eff-fcc5cb255b0c.png"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/details-815.html" target="_blank"><h5 class="recommendTitle">寻情剑 IOS购买 300元宝
+                                    正规充值</h5></a>
+
+                                <div class="gameClassify">
+                                    <div class="recommPrice">
+                                        <span class="Gameprice">￥28.00</span>
+                                        <span class="directPrice">/ <i>￥30.00</i></span>
+                                    </div>
+                                    <div class="buyBtn">
+                                        <a href="/details-815.html" class="purchase" target="_blank">我要购买</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/details-884.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/details-884.html" target="_blank"><h5 class="recommendTitle">王者荣耀 IOS购买
+                                    10点券</h5></a>
+
+                                <div class="gameClassify">
+                                    <div class="recommPrice">
+                                        <span class="Gameprice">￥1.00</span>
+                                        <span class="directPrice">/ <i>￥1.00</i></span>
+                                    </div>
+                                    <div class="buyBtn">
+                                        <a href="/details-884.html" class="purchase" target="_blank">我要购买</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/details-612.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/fd07d3c9-d8ae-cca0-8435-3b3121a0d1dc.jpg"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/details-612.html" target="_blank"><h5 class="recommendTitle">城市精灵GO IOS购买 60钻石
+                                    正规充值</h5></a>
+
+                                <div class="gameClassify">
+                                    <div class="recommPrice">
+                                        <span class="Gameprice">￥6.00</span>
+                                        <span class="directPrice">/ <i>￥6.00</i></span>
+                                    </div>
+                                    <div class="buyBtn">
+                                        <a href="/details-612.html" class="purchase" target="_blank">我要购买</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/details-552.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/details-552.html" target="_blank"><h5 class="recommendTitle">王者荣耀 IOS购买 6480点券
+                                    6480点卷</h5></a>
+
+                                <div class="gameClassify">
+                                    <div class="recommPrice">
+                                        <span class="Gameprice">￥560.00</span>
+                                        <span class="directPrice">/ <i>￥648.00</i></span>
+                                    </div>
+                                    <div class="buyBtn">
+                                        <a href="/details-552.html" class="purchase" target="_blank">我要购买</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/details-894.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/01a4babc-d610-5aa2-a4e8-67c9a349eb30.gif"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/details-894.html" target="_blank"><h5 class="recommendTitle"> 实际到帐3575</h5>
+                                </a>
+
+                                <div class="gameClassify">
+                                    <div class="recommPrice">
+                                        <span class="Gameprice">￥300.00</span>
+                                        <span class="directPrice">/ <i>￥348.00</i></span>
+                                    </div>
+                                    <div class="buyBtn">
+                                        <a href="/details-894.html" class="purchase" target="_blank">我要购买</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gameConBox">
+                            <div class="gameConBoxImg">
+                                <a href="/details-539.html" target="_blank"> <img
+                                        src="http://upload.static.daminghu.co/resource/public/game/20161006/12e81253-54bc-1b24-bfd5-e69702a9cfa3.jpg"
+                                        alt=""/> </a>
+                            </div>
+                            <div class="gameConDetail">
+                                <a href="/details-539.html" target="_blank"><h5 class="recommendTitle">部落冲突 IOS购买
+                                    一大箱宝石</h5></a>
+
+                                <div class="gameClassify">
+                                    <div class="recommPrice">
+                                        <span class="Gameprice">￥560.00</span>
+                                        <span class="directPrice">/ <i>￥648.00</i></span>
+                                    </div>
+                                    <div class="buyBtn">
+                                        <a href="/details-539.html" class="purchase" target="_blank">我要购买</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="floor">
+    </div>
+    <div class="floor">
+        <div class="partner">
+        </div>
+    </div>
+</section>
 
 
 </body>

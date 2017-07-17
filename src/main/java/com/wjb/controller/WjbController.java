@@ -8,6 +8,7 @@ import com.wjb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -17,6 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WjbController extends BaseController{
     @Autowired
     private UserService userService;
+    @GetMapping("ionic")
+    public String ionc(){
+        return "ionic/index";
+    }
 
     @GetMapping("navigation")
     public String navigation(){
@@ -40,6 +45,12 @@ public class WjbController extends BaseController{
         PageInfo<User> list = userService.all();
         return SUCCESS_FAIL(list.getSize() > 0,list,"error");
     }
+
+
+
+
+
+
 
 
 }
