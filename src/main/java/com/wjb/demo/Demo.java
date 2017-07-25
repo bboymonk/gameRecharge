@@ -19,9 +19,11 @@ public class Demo {
         num = num >> 3;
         System.out.println(num);
         pringInfo(num);
-
         int i = 10;
         System.out.println(i >>> 2);
+
+
+        System.out.println("======");
 
 
     }
