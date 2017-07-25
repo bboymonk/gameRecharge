@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/voice/RecordRTC.min.js"></script>
+    <script src="../js/voice/screenshot.js"></script>
+</head>
+<body>
+
+<div id="elementToShare" style="width:50%;height:50%;background:green;">
+    <input/>
+
+</div>
+<button onclick="start()">start</button>
+<button onclick="stop()">stop</button>
+
+<script>
+    var elementToShare = document.getElementById('elementToShare');
+    var recorder = RecordRTC(elementToShare, {
+        type: 'canvas'
+    });
+    function start(){
+        recorder.startRecording();
+    }
+
+    function stop(){
+        recorder.stopRecording(function(url) {
+            window.open(url);
+        });
+    }
+
+</script>
+
+</body>
+</html>

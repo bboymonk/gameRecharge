@@ -21,9 +21,9 @@ import javax.servlet.http.HttpServletRequest;
 public class WjbController extends BaseController{
     @Autowired
     private UserService userService;
-    @GetMapping("ionic")
+    @GetMapping("voice")
     public String ionc(){
-        return "ionic/index";
+        return "voice/voice";
     }
 
     @GetMapping("navigation")

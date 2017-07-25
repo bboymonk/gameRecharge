@@ -1,19 +1,15 @@
 package com.wjb.demo;
 
+import redis.clients.jedis.Jedis;
+
 /**
  * Created by Administrator on 2017/7/16.
  */
 public class BigDecimalTest{
     public static void main(String[] args) throws NoSuchFieldException {
-        Integer i1 = 100;
-        Integer i2 = 100;
-
-        Integer i5 = 1000;
-        Integer i6 = 1000;
-
-        System.out.println(i1 == i2);
-
-        System.out.println(i5 == i6);
+        Jedis jedis = new Jedis("192.168.0.80",6379,5000);
+//        jedis.set("username","wjb");
+        System.out.println("====="+jedis.get("age"));
 
 
     }
