@@ -6,24 +6,30 @@ import com.github.pagehelper.PageInfo;
 import com.wjb.base.BaseController;
 import com.wjb.model.User;
 import com.wjb.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
 
 /**
  * Created by Administrator on 2017/7/5.
  */
 @Controller
 public class WjbController extends BaseController{
+    private static final Logger logger = Logger.getLogger(WjbController.class);
     @Autowired
     private UserService userService;
     @GetMapping("voice")
     public String ionc(){
         return "voice/voice";
+    }
+    @GetMapping("abc")
+    public String abc(){
+        return "abc";
     }
 
     @GetMapping("navigation")
@@ -33,7 +39,11 @@ public class WjbController extends BaseController{
 
     @GetMapping("index")
     public String test(){
-        return "index/index";
+        return "ionic/index";
+    }
+    @GetMapping("category")
+    public String category(){
+        return "ionic/category";
     }
 
     @GetMapping("paging")
@@ -44,7 +54,7 @@ public class WjbController extends BaseController{
     @ResponseBody
     @GetMapping("hello")
     public String hello(Integer pageNum, Integer size, HttpServletRequest request){
-        System.out.println(request);
+        /*System.out.println(request);
         String ip = request.getHeader("X-Real-IP");
         if (!StringUtils.isEmpty(ip) && !"unknown".equalsIgnoreCase(ip)) {
             return ip;
@@ -61,11 +71,12 @@ public class WjbController extends BaseController{
         }else{
             return request.getRemoteAddr();
         }
-        System.out.println(ip);
+        System.out.println(ip);*/
 
 
         PageHelper.startPage(pageNum == null ? 1 : pageNum,size == null ? 3 : size);
         PageInfo<User> list = userService.all();
+        logger.info("分页查询"+list);
         return SUCCESS_FAIL(list.getSize() > 0,list,"error");
     }
 
