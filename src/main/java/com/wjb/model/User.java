@@ -1,22 +1,28 @@
 package com.wjb.model;
 
-import com.alibaba.fastjson.annotation.JSONField;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
-public class User implements Serializable{
+public class User {
     private Integer id;
 
-    private String name;
+    private String nickname;
 
-    private Integer age;
+    private String mobile;
 
-    private String address;
-//    @JSONField(format="yyyy-MM-dd")
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date createtime;
+    private String email;
+
+    private String username;
+
+    private String password;
+
+    private BigDecimal balance;
+
+    private Integer score;
+
+    private Integer type;
+
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -26,35 +32,75 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setNickname(String nickname) {
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
     }
 
-    public String getAddress() {
-        return address;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public String getUsername() {
+        return username;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

@@ -1,12 +1,5 @@
 package com.wjb.demo;
 
-import com.wjb.model.User;
-import org.apache.ibatis.reflection.MetaObject;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Stack;
