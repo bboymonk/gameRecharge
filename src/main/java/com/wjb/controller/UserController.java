@@ -22,10 +22,7 @@ public class UserController {
     public String toLogin(){
         return "login";
     }
-    @GetMapping("index")
-    public String index(){
-        return "index";
-    }
+
     @GetMapping("getCode")
     public void index(HttpServletResponse response, HttpServletSession session) throws IOException{
         // 设置响应的类型格式为图片格式
@@ -40,13 +37,11 @@ public class UserController {
         instance.write(response.getOutputStream());
     }
     @GetMapping("login")
-    public String login(String username, String password, String code, HttpServletRequest request) {
-        String scaptcha = (String)request.getSession().getAttribute("scaptcha");
-        if (username == "wjb" && password == "123" && scaptcha.equalsIgnoreCase(code)){
-            return "success";
+    public String login(String username, String password) {
+        if (username == "wjb" && password == "123456"){
+            return "index";
         }
-
-
         return "error";
+
     }
 }

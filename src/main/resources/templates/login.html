@@ -3,10 +3,10 @@
 <head>
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <link href="/css/style.css" rel='stylesheet' type='text/css' />
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="index" ng-controller="indexCtrl">
 
 <h1>Welcome</h1>
 <div class="login-form">
@@ -26,10 +26,21 @@
             <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
         </div>
     </form>
-    <div class="signin">
+    <div ng-click="submit()" class="signin">
         <input type="submit" value="Login" >
     </div>
 </div>
+<script>
+    angular.module('index',[]).controller('indexCtrl',function ($scope,$http) {
+        $scope.submit=function () {
+            window.location.href="/admin/index";
+        }
+
+
+
+
+    })
+</script>
 
 </body>
 </html>

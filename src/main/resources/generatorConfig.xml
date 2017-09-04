@@ -43,13 +43,15 @@
         </javaClientGenerator>
 
         <!--对哪张表做操作   domainObjectName的意思是把数据的表名指定成想要的格式，这里是User，不然生成的对象名前面会有前缀-->
-        <table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table tableName="t_permission" domainObjectName="Permission" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table tableName="t_user_role" domainObjectName="UserRole" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table tableName="t_role" domainObjectName="Role" enableCountByExample="false" enableDeleteByExample="false"
+        <!--<table tableName="t_user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="t_permission" domainObjectName="Permission" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="t_user_role" domainObjectName="UserRole" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="t_role" domainObjectName="Role" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <table tableName="t_menu" domainObjectName="Menu" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
 
     </context>
