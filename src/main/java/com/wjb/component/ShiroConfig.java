@@ -61,7 +61,8 @@ public class ShiroConfig {
         ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
         bean.setSecurityManager(securityManager());
         bean.setLoginUrl("/admin/toLogin");
-        bean.setUnauthorizedUrl("/unauthor");
+        bean.setSuccessUrl("/admin/index");
+        bean.setUnauthorizedUrl("/error");
 
         Map<String, Filter> filters = new HashMap();
         filters.put("anon", new AnonymousFilter());

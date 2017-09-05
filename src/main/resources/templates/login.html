@@ -20,10 +20,10 @@
     <div class="avtar">
         <img src="/img/login/avtar.png" />
     </div>
-    <form>
-        <input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+    <form ng-submit="submit()">
+        <input type="text" class="text" placeholder="Username" ng-model="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
         <div class="key">
-            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+            <input type="password" placeholder="Password" ng-model="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
         </div>
     </form>
     <div ng-click="submit()" class="signin">
@@ -32,8 +32,12 @@
 </div>
 <script>
     angular.module('index',[]).controller('indexCtrl',function ($scope,$http) {
+        $scope.username = null;
+        $scope.password = null;
         $scope.submit=function () {
-            window.location.href="/admin/index";
+            $http.get("/admin/login?username="+$scope.username+"&password="+$scope.password).then(function($response){
+                alert($scope.username);
+            });
         }
 
 

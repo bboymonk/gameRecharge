@@ -43,7 +43,7 @@ public class CustomShiroRealm extends AuthorizingRealm {
         Integer uid = admin.getId();
         List<Role> roleList = roleService.roleList(uid);
         Set<String> permissions =new HashSet<String>();
-        Set<String> roles = new HashSet<String>() ;
+        Set<String> roles = new HashSet<String>();
         for(Role role:roleList){
             roles.add(role.getName());
             List<Permission> list = permissionService.permissionList(role.getId());
@@ -60,14 +60,14 @@ public class CustomShiroRealm extends AuthorizingRealm {
 
     /**
      * 认证
-     * @param authenticationToken
+     * @param token
      * @return
      * @throws AuthenticationException
      */
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        String username = authenticationToken.getPrincipal().toString();
-        String password = new String((char[]) authenticationToken.getCredentials());
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+        String username = token.getPrincipal().toString();
+        String password = new String((char[]) token.getCredentials());
         User admin = userService.login(username, ShiroKit.md5(password,username));
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(admin,admin.getPassword(),getName());
         info.setCredentialsSalt(ByteSource.Util.bytes(admin.getUsername()));
