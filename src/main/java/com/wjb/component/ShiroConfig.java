@@ -69,11 +69,18 @@ public class ShiroConfig {
         bean.setFilters(filters);
 
         Map<String, String> chains = new HashMap();
+        chains.put("/css/**","anon");
+        chains.put("/font/**","anon");
+        chains.put("/img/**","anon");
+        chains.put("/js/**","anon");
+        chains.put("/css/**","anon");
         chains.put("/**/login", "anon");
         chains.put("/**/toLogin","anon");
         chains.put("/**/logout", "logout");
-//        chains.put("/admin/**", "authc,resourceCheckFilter");
+//        chains.put("/**","anon");
+        chains.put("/**","authc");
         bean.setFilterChainDefinitionMap(chains);
+        System.out.println("Shiro拦截器工厂类注入成功");
         return bean;
     }
 
@@ -85,7 +92,7 @@ public class ShiroConfig {
     public DefaultWebSecurityManager securityManager() {
         DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
         manager.setRealm(customShiroRealm());
-        manager.setCacheManager(redisCacheManager());
+//        manager.setCacheManager(redisCacheManager());
         manager.setSessionManager(defaultWebSessionManager());
         return manager;
     }
@@ -97,7 +104,8 @@ public class ShiroConfig {
     @Bean(name="sessionManager")
     public DefaultWebSessionManager defaultWebSessionManager() {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
-        sessionManager.setCacheManager(redisCacheManager());
+//        sessionManager.setCacheManager(redisCacheManager());
+
         sessionManager.setGlobalSessionTimeout(1800000);
         sessionManager.setDeleteInvalidSessions(true);
         sessionManager.setSessionValidationSchedulerEnabled(true);
@@ -113,7 +121,7 @@ public class ShiroConfig {
     @DependsOn(value="lifecycleBeanPostProcessor")
     public CustomShiroRealm customShiroRealm() {
         CustomShiroRealm customShiroRealm = new CustomShiroRealm();
-        customShiroRealm.setCacheManager(redisCacheManager());
+//        customShiroRealm.setCacheManager(redisCacheManager());
         customShiroRealm.setCredentialsMatcher(hashMatcher());
         return customShiroRealm;
     }
@@ -167,7 +175,8 @@ public class ShiroConfig {
     @Bean("hashMatcher")
     public HashedCredentialsMatcher hashMatcher(){
         HashedCredentialsMatcher hashedCredentialsMatcher =new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("md5");
+        hashedCredentialsMatcher.setHashAlgorithmName("MD5");
+        hashedCredentialsMatcher.setHashIterations(2);
         return  hashedCredentialsMatcher;
     }
 

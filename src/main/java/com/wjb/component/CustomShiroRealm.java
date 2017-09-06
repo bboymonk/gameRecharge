@@ -6,12 +6,11 @@ import com.wjb.service.UserService;
 import com.wjb.model.Permission;
 import com.wjb.model.Role;
 import com.wjb.model.User;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
@@ -39,9 +38,8 @@ public class CustomShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        User admin = (User) principalCollection.getPrimaryPrincipal();
-        Integer uid = admin.getId();
-        List<Role> roleList = roleService.roleList(uid);
+        User user = (User)principalCollection.getPrimaryPrincipal();
+        List<Role> roleList = roleService.roleList(user.getUsername());
         Set<String> permissions =new HashSet<String>();
         Set<String> roles = new HashSet<String>();
         for(Role role:roleList){
@@ -67,10 +65,8 @@ public class CustomShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = token.getPrincipal().toString();
-        String password = new String((char[]) token.getCredentials());
-        User admin = userService.login(username, ShiroKit.md5(password,username));
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(admin,admin.getPassword(),getName());
-        info.setCredentialsSalt(ByteSource.Util.bytes(admin.getUsername()));
+        User user = userService.login(username);
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),ByteSource.Util.bytes(user.getSalt()),getName());
         return info;
     }
 

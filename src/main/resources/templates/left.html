@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="leftApp" ng-controller="leftCtrl">
+    <ul ng-repeat="x in menus">
+        <li>
+            <a data-target="#demo" data-toggle="collapse">{{x.name}}</a>
+            <ul ng-repeat="y in childMenu" id="demo" class="collapse in">
+                <li>
+                    {{y.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!--<button type="button" class="btn btn-primary" data-toggle="collapse"-->
+            <!--data-target="#demo">-->
+        <!--简单的可折叠组件-->
+    <!--</button>-->
+
+    <!--<div id="demo" class="collapse in">-->
+        <!--Nihil anim keffiyeh helvetica, craft beer labore wes anderson-->
+        <!--cred nesciunt sapiente ea proident. Ad vegan excepteur butcher-->
+        <!--vice lomo.-->
+    <!--</div>-->
+
+
+
+</body>
+<script>
+    angular.module('leftApp',[]).controller('leftCtrl',function ($scope,$http) {
+        $scope.childMenu = new Array();
+        $http.get("/menu/getMenu").then(function (response) {
+            $scope.menus=response.data.DATA;
+            console.log($scope.menus);
+                if($scope.menus[0].childMenu.length > 0){
+                    $scope.childMenu=$scope.menus[0].childMenu;
+                }
+        })
+    });
+</script>
+
+</html>

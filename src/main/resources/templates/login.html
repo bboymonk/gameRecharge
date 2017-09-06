@@ -20,24 +20,30 @@
     <div class="avtar">
         <img src="/img/login/avtar.png" />
     </div>
-    <form ng-submit="submit()">
+    <form>
         <input type="text" class="text" placeholder="Username" ng-model="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
         <div class="key">
             <input type="password" placeholder="Password" ng-model="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
         </div>
+        <div ng-click="submit()" class="signin">
+            <input type="submit" value="Login" >
+        </div>
     </form>
-    <div ng-click="submit()" class="signin">
-        <input type="submit" value="Login" >
-    </div>
 </div>
 <script>
     angular.module('index',[]).controller('indexCtrl',function ($scope,$http) {
-        $scope.username = null;
-        $scope.password = null;
+
         $scope.submit=function () {
-            $http.get("/admin/login?username="+$scope.username+"&password="+$scope.password).then(function($response){
-                alert($scope.username);
-            });
+            $http({
+                method  : 'POST',
+                url     : '/admin/login',
+                params    : {
+                    username:$scope.username,
+                    password:$scope.password
+                }
+            }).then(function successCallback(response) {
+                location.href="/index.html"
+            })
         }
 
 

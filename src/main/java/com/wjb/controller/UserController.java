@@ -1,21 +1,23 @@
 package com.wjb.controller;
 
 import com.wjb.component.ShiroKit;
-import com.wjb.model.Permission;
 import com.wjb.model.User;
 import com.wjb.service.PermissionService;
+import com.wjb.service.UserService;
 import com.wjb.util.Captcha;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.session.HttpServletSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017/9/1.
@@ -25,6 +27,13 @@ import java.util.List;
 public class UserController {
     @Autowired
     private PermissionService permissionService;
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("left")
+    public String left(){
+        return "left";
+    }
 
     @GetMapping("index")
     public String index(){
@@ -33,13 +42,12 @@ public class UserController {
 
     @GetMapping("toLogin")
     public String toLogin(){
-
-        List<Permission> list = permissionService.permissionList(1);
-        for (Permission permission:list){
-            System.out.println(permission.getPermissionname());
-        }
-
         return "login";
+    }
+
+    @GetMapping("error")
+    public String error(){
+        return "error";
     }
 
     @GetMapping("getCode")
@@ -57,12 +65,28 @@ public class UserController {
         instance.write(response.getOutputStream());
     }
 
-    @GetMapping("login")
-    public String doLogin(String username, String password,HttpServletRequest request) {
-        User user = ShiroKit.getShiroAdmin();
-        System.out.println(user.getUsername());
-
-        return "error";
+    @RequestMapping(value = "login",method = RequestMethod.POST)
+    public String doLogin(String username, String password,HttpSession session) {
+        try {
+            UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+            Subject subject = SecurityUtils.getSubject();
+            subject.login(token);
+            return "index";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
 
     }
+    @ResponseBody
+    @GetMapping("add")
+    public String add(User user){
+        String newPassword = ShiroKit.md5(user);
+        user.setPassword(newPassword);
+        int i = userService.insertSelective(user);
+        return String.valueOf(i);
+    }
+
+
+
 }

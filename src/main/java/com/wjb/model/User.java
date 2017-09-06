@@ -6,6 +6,8 @@ import java.util.Date;
 public class User {
     private Integer id;
 
+    private String salt;
+
     private String nickname;
 
     private String mobile;
@@ -30,6 +32,18 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public String getCredentialsSalt(){
+        return this.username+this.salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 
     public String getNickname() {

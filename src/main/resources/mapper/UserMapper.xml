@@ -150,7 +150,6 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="login" parameterType="String" resultType="com.wjb.model.User">
-    SELECT * from t_user WHERE username=#{username}
-    AND password=#{password}
+    SELECT * from t_user WHERE username=#{0}
   </select>
 </mapper>
