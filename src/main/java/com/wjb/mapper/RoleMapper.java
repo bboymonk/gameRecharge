@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface RoleMapper extends BaseMapper<Role,Long>{
 
-    List<Role> roleList(String username);
+    List<Role> roleList(Integer uid);
 }

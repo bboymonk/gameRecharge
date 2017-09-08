@@ -23,7 +23,6 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu,Long> implements MenuS
     public BaseMapper<Menu, Long> getMapper() {
         return menuMapper;
     }
-
     @Override
     public List<Menu> rootMenu(Map<String,Object> queryMap) {
         //所有菜单
@@ -44,7 +43,6 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu,Long> implements MenuS
 
         return menu;
     }
-
     /**
      * 设置子菜单
      * @param id
@@ -60,7 +58,6 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu,Long> implements MenuS
                 }
             }
         }
-
         //如果有三级菜单，再遍历一次
         for (Menu menu:childMenu){
             if (null != menu.getParentid()){
@@ -69,11 +66,9 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu,Long> implements MenuS
                 }
             }
         }
-
         if (childMenu.size() == 0){
             return null;
         }
-
         return childMenu;
     }
 

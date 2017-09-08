@@ -9,5 +9,5 @@ import java.util.List;
  * Created by Administrator on 2017/9/1.
  */
 public interface RoleService extends BaseService<Role,Long>{
-    List<Role> roleList(String username);
+    List<Role> roleList(Integer uid);
 }

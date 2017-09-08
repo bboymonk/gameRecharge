@@ -22,7 +22,7 @@ public class MenuController extends BaseController {
 
     @ResponseBody
     @GetMapping("getMenu")
-    public String getMenu(String parentId){
+    public String getMenu(Integer parentId){
         queryMap.put("parentId",parentId);
         List<Menu> menus = menuService.rootMenu(queryMap);
         return SUCCESS_FAIL(menus!= null,menus,"error");

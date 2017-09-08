@@ -74,7 +74,7 @@ public class UserController extends BaseController{
     @ResponseBody
     @RequestMapping(value = "login",method = RequestMethod.POST)
     public String doLogin(User user,HttpSession session) {
-        Object admin = ShiroKit.getShiroAdmin();
+        User admin = (User)ShiroKit.getShiroAdmin();
         if (admin != null){
             return SUCCESS_FAIL(false,null,"您已登录");
         }

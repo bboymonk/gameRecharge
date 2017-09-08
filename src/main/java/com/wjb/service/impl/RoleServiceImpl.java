@@ -23,8 +23,8 @@ public class RoleServiceImpl extends BaseServiceImpl<Role,Long> implements RoleS
     }
 
     @Override
-    public List<Role> roleList(String username) {
-        List<Role> roleList = roleMapper.roleList(username);
+    public List<Role> roleList(Integer uid) {
+        List<Role> roleList = roleMapper.roleList(uid);
         for (Role role:roleList){
             System.out.println(role.getName());
         }

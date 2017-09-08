@@ -55,9 +55,10 @@
     set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="roleList" resultType="com.wjb.model.Role" parameterType="String">
-    SELECT tr.* from t_role tr,t_user tu,t_user_role tur where tur.user_id=tu.id
+  <select id="roleList" resultType="com.wjb.model.Role" parameterType="java.lang.Integer">
+    SELECT tr.* from t_role tr,t_user tu,t_user_role tur
+    where tur.user_id=tu.id
     AND tur.role_id=tr.id
-    AND tu.username=#{_parameter}
+    AND tu.id=#{uid}
   </select>
 </mapper>

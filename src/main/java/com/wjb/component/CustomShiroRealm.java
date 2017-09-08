@@ -39,7 +39,7 @@ public class CustomShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         User user = (User)principalCollection.getPrimaryPrincipal();
-        List<Role> roleList = roleService.roleList(user.getUsername());
+        List<Role> roleList = roleService.roleList(user.getId());
         Set<String> permissions =new HashSet<String>();
         Set<String> roles = new HashSet<String>();
         for(Role role:roleList){

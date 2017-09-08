@@ -1,9 +1,10 @@
 package com.wjb.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable{
     private Integer id;
 
     private String salt;
