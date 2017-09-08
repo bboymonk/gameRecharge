@@ -8,9 +8,13 @@ public class Menu {
 
     private Integer parentid;
 
+    private Integer sort;
+
     private String name;
 
     private String url;
+
+    private String picUrl;
 
     private Date createtime;
 
@@ -40,6 +44,22 @@ public class Menu {
 
     public void setParentid(Integer parentid) {
         this.parentid = parentid;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 
     public String getName() {

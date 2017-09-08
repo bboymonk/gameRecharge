@@ -51,7 +51,7 @@
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="t_role" domainObjectName="Role" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <table tableName="t_menu" domainObjectName="Menu" enableCountByExample="false" enableDeleteByExample="false"
+        <table tableName="t_role_menu" domainObjectName="RoleMenu" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
 
     </context>

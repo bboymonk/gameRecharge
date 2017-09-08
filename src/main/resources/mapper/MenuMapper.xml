@@ -4,17 +4,19 @@
   <resultMap id="BaseResultMap" type="com.wjb.model.Menu">
     <result column="id" jdbcType="INTEGER" property="id" />
     <result column="parentId" jdbcType="INTEGER" property="parentid" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="picUrl" jdbcType="VARCHAR" property="picUrl" />
     <result column="createTime" jdbcType="DATE" property="createtime" />
     <result column="modifyTime" jdbcType="DATE" property="modifytime" />
   </resultMap>
   <insert id="insert" parameterType="com.wjb.model.Menu">
-    insert into t_menu (id, parentId, name, 
-      url, createTime, modifyTime
+    insert into t_menu (id, parentId, sort,name,
+      url, picUrl,createTime, modifyTime
       )
-    values (#{id,jdbcType=INTEGER}, #{parentid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{modifytime,jdbcType=DATE}
+    values (#{id,jdbcType=INTEGER}, #{parentid,jdbcType=INTEGER},#{sort,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+      #{url,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR},#{createtime,jdbcType=DATE}, #{modifytime,jdbcType=DATE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.wjb.model.Menu">
@@ -26,11 +28,17 @@
       <if test="parentid != null">
         parentId,
       </if>
+      <if test="sort != null">
+        sort,
+      </if>
       <if test="name != null">
         name,
       </if>
       <if test="url != null">
         url,
+      </if>
+      <if test="picUrl != null">
+        picUrl,
       </if>
       <if test="createtime != null">
         createTime,
@@ -46,11 +54,17 @@
       <if test="parentid != null">
         #{parentid,jdbcType=INTEGER},
       </if>
+      <if test="sort != null">
+        #{sort,jdbcType=INTEGER},
+      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="url != null">
         #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
       </if>
       <if test="createtime != null">
         #{createtime,jdbcType=DATE},
@@ -60,8 +74,14 @@
       </if>
     </trim>
   </insert>
-  <select id="rootMenu" resultType="com.wjb.model.Menu">
-    select * from t_menu
+  <select id="rootMenu" resultType="com.wjb.model.Menu" parameterType="java.util.Map">
+    select tm.*
+    FROM t_menu tm,t_role_menu trm,t_user_role tur
+    WHERE trm.menuId=tm.id AND trm.roleId=tur.role_id AND tur.user_id=1
+    <if test="parentId != null and parentId != &quot;&quot;">
+      AND tm.parentId=#{parentId}
+    </if>
+    ORDER BY tm.sort
   </select>
 
 

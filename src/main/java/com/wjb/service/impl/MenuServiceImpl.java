@@ -26,13 +26,13 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu,Long> implements MenuS
 
     @Override
     public List<Menu> rootMenu(Map<String,Object> queryMap) {
-
         //所有菜单
-        List<Menu> rootMenu = menuMapper.rootMenu();
+        List<Menu> rootMenu = menuMapper.rootMenu(queryMap);
+        Integer parentId = queryMap.get("parentId") == null?0:(Integer)queryMap.get("parentId");
         //最后的菜单
         List<Menu> menu = new ArrayList<>();
         for (int i = 0;i<rootMenu.size();i++){
-            if (rootMenu.get(i).getParentid() == 0){
+            if (rootMenu.get(i).getParentid() == parentId){
                 menu.add(rootMenu.get(i));
             }
         }
