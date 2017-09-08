@@ -6,7 +6,7 @@
     <link href="/css/style.css" rel='stylesheet' type='text/css' />
     <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
 </head>
-<body ng-app="index" ng-controller="indexCtrl">
+<body ng-app="indexApp" ng-controller="indexCtrl">
 
 <h1>Welcome</h1>
 <div class="login-form">
@@ -31,7 +31,7 @@
     </form>
 </div>
 <script>
-    angular.module('index',[]).controller('indexCtrl',function ($scope,$http) {
+    angular.module('indexApp',[]).controller('indexCtrl',function ($scope,$http) {
 
         $scope.submit=function () {
             $http({
@@ -42,8 +42,12 @@
                     password:$scope.password
                 }
             }).then(function successCallback(response) {
-                location.href="/index.html"
-            })
+                if(response.data.DATA == "登录成功"){
+                    window.location.href="/admin/index";
+                }else{
+                    window.location.href="/admin/toLogin";
+                }
+            });
         }
 
 

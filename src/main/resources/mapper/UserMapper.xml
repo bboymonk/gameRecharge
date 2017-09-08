@@ -151,5 +151,6 @@
   </update>
   <select id="login" parameterType="String" resultType="com.wjb.model.User">
     SELECT * from t_user WHERE username=#{0}
+    AND password=#{1}
   </select>
 </mapper>

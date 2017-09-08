@@ -65,8 +65,9 @@ public class CustomShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = token.getPrincipal().toString();
-        User user = userService.login(username);
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),ByteSource.Util.bytes(user.getSalt()),getName());
+        String password = new String((char[])token.getCredentials());
+        User user = userService.login(username,ShiroKit.md5(password,username));
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(),ByteSource.Util.bytes(user.getUsername()),getName());
         return info;
     }
 
@@ -77,8 +78,8 @@ public class CustomShiroRealm extends AuthorizingRealm {
 
     @Override
     protected void clearCachedAuthenticationInfo(PrincipalCollection principals) {
-        User admin = ((User) principals.getPrimaryPrincipal());
-        SimplePrincipalCollection spc = new SimplePrincipalCollection(admin.getUsername(), getName());
+        String username =  (String)principals.getPrimaryPrincipal();
+        SimplePrincipalCollection spc = new SimplePrincipalCollection(username, getName());
         super.clearCachedAuthenticationInfo(spc);
     }
 

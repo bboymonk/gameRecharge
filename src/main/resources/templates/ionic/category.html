@@ -1,145 +1,402 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="../css/ionic/ionic.min.css" rel="stylesheet">
-<script src="../js/ionic/ionic.bundle.min.js"></script>
-<script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
-<script src="https://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Insert title here</title>
+	<link href="../css/ionic.min.css" rel="stylesheet">
+	<script src="../js/ionic.bundle.min.js"></script>
 </head>
 <style>
-	.smallimg li{
+	#topMenu li{
 		float:left;
-		width:40%;
-		margin-top:10%;
+		margin-left:5px;
 	}
-.search-head{ background-color:#CC0000; height:80px; width:100%; }
-.search-box{ 
-position:absolute; left:10px; top:1.8%; margin-top:-17px; right:52px; height:54px;overflow:hidden; background-color:#fff; -moz-border-radius:500px;  -webkit-border-radius:500px;  border-radius:500px; }
-.search-box .search-input{ 
-height:35px !important; line-height:35px; margin:8px 0 !important; text-align:left;  border:none;   background-size:15px 15px; padding:0 15px 0 30px; font-size:14px;}
-.search-box .search-input::-webkit-input-placeholder {
-color:#aaa8a8;font-size:18px;}
-.search-box .search-input:-moz-placeholder {
-color:#aaa8a8;font-size:18px;}
-.search-box .search-input::-moz-placeholder {
-color:#aaa8a8;font-size:18px;}
-.search-box .search-input:-ms-input-placeholder {
-color:#aaa8a8;font-size:18px;}
-</style>
-<body ng-app="todo" ng-controller="todoCtrl">
-	<ion-view title="Home" hide-nav-bar="true">
-	<div id="header" class="search-head header mui-bar mui-bar-nav">
-  		<div class="search-box">
-   			 <input id="search" class="search-input" type="search" name="search" placeholder="搜索想要的宝贝">
-  		</div>
-	</div>
+	.leftMenu{
+		border-right:1px solid #e5e5e5;
+	}
+	.leftMenu li{
+		list-style-type:none; border-bottom:1px solid rgb(221, 221, 221);width:75px;height:50px;padding-top:18px;
+	}
+	.leftMenu ul{
+		width:75px;
+	}
 
-	<ion-scroll zooming="true" direction="y" style="width: 100%; height: 100%;overflow-y:hidden;">
-	<!--  左边栏-->
-	<div class="leftMenu" style="margin-top:30%;">
-		<ul>
-			<li ng-repeat="x in tasks" style="margin-top:10%;margin-left:7%;">
-				<a href="#/{{x.title}}" style="text-decoration:none;">
-					<h1>{{x.title}}</h1>
-				</a>
+	.leftMenu h3{
+		margin-left:13%;
+	}
+	.smallimg li {
+		float: left;
+		width: 50%;
+		margin-top: 8%;
+
+	}
+
+	.footer li {
+		float: left;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	.smallimg li img {
+		width: 40%;
+	}
+
+	.smallimg h3 {
+		color: #666666;
+		font-size: 11px;
+	}
+
+	.smallimg h4 {
+		color: #666666;
+		font-size: 11px;
+	}
+
+	.bigImg img {
+		width: 80%;
+		margin-left: 10%;
+	}
+
+	.leftMenu h3 {
+		font-size: 11px;
+	}
+	.active {
+		color: red;
+	}
+	.active2 {
+		border-left:2px solid rgb(253, 96, 61);
+	}
+</style>
+<body ng-app="todo" ng-controller="todoCtrl"	>
+
+<!-- 搜索 -->
+<div id="topsel" class="bar bar-header item-input-inset" style="filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;background-color: transparent;">
+	<div class="item-input-wrapper">
+		<i class="icon ion-ios-search placeholder-icon"></i>
+		<input type="search" placeholder="搜索你想要的宝贝" ng-click="sel()">
+	</div>
+</div>
+
+<!--  左边栏-->
+<ion-scroll id="king" zooming="true" direction="y"
+			style="width: 100%; height: 100%;overflow-y:hidden;">
+	<div id="leftMenu" class="leftMenu" style="margin-top: 0px;width:75px;height:691px;">
+
+
+		<ul id="appleCard" style="text-align:left;">
+			<li id="cardLi" ng-click="isCurrent(-1,null)"><a href="#"
+															 style="text-decoration: none;">
+				<h3 id="cardFont">苹果卡</h3>
+			</a></li>
+		</ul>
+		<ul id="gameNames" style="text-align:left;">
+			<li ng-repeat="x in gameNames" ng-class="bg2[$index]" ng-click="isCurrent($index,x.id)"><a
+					href="#/{{x.name}}/{{x.id}}" style="text-decoration: none;">
+				<h3 ng-class="bg[$index]">{{x.name}}</h3>
+			</a>
 			</li>
 		</ul>
-	</div>
-	<!-- 右边栏 -->
-	<div class="rightMenu" style="position:absolute;top:0%;left:40%;width:100%;height:100%;">
-		<div ng-view="">
-    	</div>	
-    	<div>
-    		<img style="width:55%;" src="/img/index/关云长.jpg"/>
-    	</div>
-    	<div class="smallimg">
-    		<ul>
-    			<li>
-    				<img src="/img/index/汇.png/">
-    				<h2>汇充值</h2>
-    			</li>
-    			<li>
-    				<img src="/img/index/卡包.png/">
-    				<h2>卡包</h2>
-    			</li>
-    			<li>
-    				<img src="/img/index/券卡.png/">
-    				<h2>券卡</h2>
-    			</li>
-    			<li>
-    				<img src="/img/index/送礼物.png/">
-    				<h2>送礼物</h2>
-    			</li>
-    		</ul>
-    	</div>
-    	
-    	
-		 <script type="text/ng-template" id="embedded.qq.html">
-				123456
- 		 </script>
 
-		  <script type="text/ng-template" id="embedded.game.html">
-      			<ul>
-					<li ng-repeat="x in tasks">
-						<h1>{{x.title}}</h1>
+
+
+	</div>
+</ion-scroll>
+
+<!-- 右边栏 -->
+<ion-content id="rightContent" style="position: absolute; top:42px;left: 25%;height:80%;" ng-switch="selectMenu">
+
+	<div ng-switch-default>
+		<!-- <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher> -->
+		<ion-list>
+			<div class="smallimg">
+				<ul ng-repeat="x in cards">
+					<li style="text-align:center";>
+						<a href="/indent/appleid.html" style="text-decoration:none;">
+							<img ng-src="../{{x.icon}}">
+							<h3>{{x.name}}</h3>
+							<h4>
+								<span style="color: #CC3333; font-weight: bold;">￥{{x.price}}</span>&nbsp;<span
+									style="color:	#666666;text-decoration: line-through;">{{x.original}}</span>
+							</h4>
 						</a>
 					</li>
 				</ul>
-  		  </script>
+			</div>
+		</ion-list>
+		<!-- <div  ng-if="!hasMore()">
+			<p style="height: 50px;line-height:50px;text-align: center;">我是有底线的</p>
+		</div>
+	<ion-infinite-scroll immediate-check="false"	 ng-if="hasMore()" on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll> -->
 	</div>
-	
-</ion-scroll>
-</ion-view>
-	
-	
-	
-	<div class="tabs tabs-icon-top">
-		<a class="tab-item" href="../index.html"> <i
+
+
+
+	<div ng-switch-when="0">
+		<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+		<ion-list>
+			<div class="bigImg">
+				<img ng-src="../{{gameIcon}}" />
+			</div>
+			<div class="smallimg">
+				<ul ng-repeat="x in props">
+					<li style="text-align:center;">
+						<a href="/indent/appleid.html" style="text-decoration:none;">
+							<img ng-src="../{{x.gameIcon}}">
+							<h3>{{x.propname}}</h3>
+							<h4>
+								<span style="color: #CC3333; font-weight: bold;">￥{{x.price}}</span>&nbsp;<span
+									style="color:	#666666;text-decoration: line-through;">{{x.original}}</span>
+							</h4>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</ion-list>
+		<div  ng-if="!hasMore()">
+			<p style="height: 50px;line-height:50px;text-align: center;">我是有底线的</p>
+		</div>
+		<ion-infinite-scroll immediate-check="false"	 ng-if="hasMore()" on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>
+	</div>
+
+	<div ng-switch-when="1">
+		<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+		<ion-list>
+			<div class="bigImg">
+				<img ng-src="../{{gameIcon}}" />
+			</div>
+			<div class="smallimg">
+				<ul ng-repeat="x in props">
+					<li style="text-align:center";>
+						<a href="/indent/appleid.html" style="text-decoration:none;">
+							<img ng-src="../{{x.icon}}">
+							<h3>{{x.propname}}</h3>
+							<h4>
+								<span style="color: #CC3333; font-weight: bold;">￥{{x.price}}</span>&nbsp;<span
+									style="color:	#666666;text-decoration: line-through;">{{x.original}}</span>
+							</h4>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</ion-list>
+		<div  ng-if="!hasMore()">
+			<p style="height: 50px;line-height:50px;text-align: center;">我是有底线的</p>
+		</div>
+		<ion-infinite-scroll immediate-check="false"	 ng-if="hasMore()" on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>
+	</div>
+
+
+	<div ng-switch-when="2">
+		<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+		<ion-list>
+			<div class="bigImg">
+				<img ng-src="../{{gameIcon}}" />
+			</div>
+			<div class="smallimg">
+				<ul ng-repeat="x in props">
+					<li style="text-align:center";>
+						<a href="/indent/appleid.html" style="text-decoration:none;">
+							<img ng-src="../{{x.icon}}">
+							<h3>{{x.propname}}</h3>
+							<h4>
+								<span style="color: #CC3333; font-weight: bold;">￥{{x.price}}</span>&nbsp;<span
+									style="color:	#666666;text-decoration: line-through;">{{x.original}}</span>
+							</h4>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</ion-list>
+		<div  ng-if="!hasMore()">
+			<p style="height: 50px;line-height:50px;text-align: center;">我是有底线的</p>
+		</div>
+		<ion-infinite-scroll immediate-check="false"	 ng-if="hasMore()" on-infinite="loadMore()" distance="1%" ></ion-infinite-scroll>
+	</div>
+
+
+</ion-content>
+
+
+<div class="tabs tabs-icon-top" style="z-index: 9999999;">
+	<a class="tab-item" href="/index.html"> <i
 			class="icon ion-ios-home"></i> 首页
-		</a> 
-		<a class="tab-item" href="indent/record.html"> <i
-			class="icon ion-ios-list"></i> 订单
-		</a> 
-		<a class="tab-item" href="category.html"> <i
-			class="icon ion-ios-list"></i> 分类
-		</a> 
-		<a class="tab-item" href="myinformation.html"> <i
-			class="icon ion-android-person"></i> 我的
-		</a>
+	</a> <a class="tab-item" href="/indent/record.html"> <i
+		class="icon ion-ios-list"></i> 订单
+</a> <a class="tab-item" href="category2.html"> <i
+		class="icon ion-ios-paper"></i> 分类
+</a>  <a class="tab-item" href="myinformation.html"> <i
+		class="icon ion-android-person"></i> 我的
+</a>
+</div>
+
+<div id="sel" style="position: fixed;height: 100%;width: 100%;background-color: white;z-index: 999999;">
+	<div id="topsel" class="bar bar-header item-input-inset" style="background-color: white;border-bottom: 1px solid #D0D0D0;">
+		<button class="button" style="margin-right: 5px;" ng-click="back()">
+			<i class="icon ion-chevron-left"></i>
+		</button>
+		<div class="item-input-wrapper" style="border-radius: 20px 20px 20px 20px;border: 1px solid #D0D0D0;">
+			<i class="icon ion-ios-search placeholder-icon"></i>
+			<input type="search" placeholder="搜索你想要的宝贝" ng-model="keyword" ng-change="input(keyword)">
+		</div>
+		<button class="button" style="border-radius: 20px 20px 20px 20px;background-color: #cc3333;" ng-click="select(keyword)">
+			<span style="color: white;">搜索</span>
+		</button>
 	</div>
+
+	<div id="cue" style="position: absolute;height: 100%;width: 100%;background-color: white;z-index: 999999;">
+		<ul class="list">
+			<li class="item" ng-repeat="name in names" ng-if="$index < 5" ng-click="selected(name)">
+				{{name}}
+			</li>
+		</ul>
+	</div>
+
+	<div style="padding: 0 15px;margin-top: 15px;">
+		<p style="color: #232326;">热门搜索</p>
+		<div class="row" ng-repeat="w in d">
+			<div class="col" style="font-size: 60%;text-align:center;border-radius: 20px 20px 20px 20px;background-color: #f0f2f5;"></div>
+			<div class="col" style="font-size: 60%;text-align:center;border-radius: 20px 20px 20px 20px;background-color: #f0f2f5;"></div>
+			<div class="col" style="font-size: 60%;text-align:center;border-radius: 20px 20px 20px 20px;background-color: #f0f2f5;"></div>
+		</div>
+	</div>
+
+
+	<div class="tabs tabs-icon-top" style="z-index: 9999999;">
+		<a class="tab-item" href="/index2.html"> <i
+				class="icon ion-ios-home"></i> 首页
+		</a> <a class="tab-item" href="/indent/record.html"> <i
+			class="icon ion-ios-list"></i> 订单
+	</a> <a class="tab-item" href="category2.html"> <i
+			class="icon ion-ios-list"></i> 分类
+	</a>  <a class="tab-item" href="myinformation.html"> <i
+			class="icon ion-android-person"></i> 我的
+	</a>
+	</div>
+
+</div>
+
 </body>
 <script>
-	angular.module('todo', [ 'ionic','ngRoute']).controller('todoCtrl',function($scope) {
-			$scope.tasks=[
-					{title:'超值推荐'},
-					{title:'慢充特惠'},
-					{title:'qq'},
-					{title:'通信'},
-					{title:'网游'},
-					{title:'手游'},
-					{title:'礼品卡'},
-					{title:'体育'},
-					{title:'音乐'}
-			];
-			}).controller('qqController',function($scope,$route){
-				$scope.$route=$route;				
-			}).controller('gameController',function($scope,$route){
-				$scope.$route=$route;	
-			}).config(function($routeProvider){
-				$routeProvider.
-				when('/qq',{
-					templateUrl: 'embedded.qq.html',
-			        controller: 'qqController'
-				}).
-				when('/网游',{
-					templateUrl: 'embedded.game.html',
-			        controller: 'gameController'
-				}).
-				otherwise({
-			        redirectTo: '/qq'
-			    });
-			});
+    angular.module('todo', [ 'ionic']).controller('todoCtrl',function($scope, $http,$ionicScrollDelegate) {
+        document.getElementById("cardLi").click();
+        document.getElementById("sel").style.display = "none";
+        var goodsName;
+        $http.get("/goods/getname").then(function(response){
+            goodsName = response.data.data;
+        });
+        $scope.sel = function(){
+            document.getElementById("topsel").style.display = "none";
+            document.getElementById("leftMenu").style.display = "none";
+            document.getElementById("rightContent").style.display = "none";
+            document.getElementById("sel").style.display = "block";
+        }
+        $scope.back = function(){
+            document.getElementById("topsel").style.display = "block";
+            document.getElementById("leftMenu").style.display = "block";
+            document.getElementById("rightContent").style.display = "block";
+            document.getElementById("sel").style.display = "none";
+        }
+        $scope.select = function(keyword){
+            if(keyword != undefined){
+                var storage = window.localStorage;
+                storage.keyword = keyword;
+                window.location.href = "/result.html";
+            }
+        }
+        $scope.input = function(keyword){
+            if(keyword != ""){
+                document.getElementById("cue").style.display = "block";
+                var showData = new Array();
+                for(var i = 0; i < goodsName.length; i++){
+                    if(goodsName[i].pinyin.indexOf(keyword) != -1){
+                        showData.push(goodsName[i].name);
+                    }
+                }
+                $scope.names = showData;
+            }else{
+                document.getElementById("cue").style.display = "none";
+            }
+        }
+        $scope.selected = function(name){
+            var storage = window.localStorage;
+            storage.keyword = name;
+            window.location.href = "/result.html";
+        }
+
+        $http.get("/game/getAll").then(function(response) {
+            $scope.gameNames = response.data.data;
+            console.log($scope.gameNames);
+        });
+
+
+		/* 点击事件 */
+        $scope.isCurrent = function(index,id) {
+            $ionicScrollDelegate.scrollTop();
+            $scope.selectMenu=index;
+            $scope.param=id;
+            $scope.bg = [];
+            $scope.bg2 = [];
+            $scope.bg[index] = 'active';
+            $scope.bg2[index] = 'active2';
+            $scope.pages = 1;
+            $scope.pageNum = 1;
+            $scope.size=6;
+            $scope.hasValue = true;
+            $scope.totalCount = 0;
+			/* 对苹果卡的单独操作*/
+            if(null == id){
+                document.getElementById("cardLi").className="active2";
+                document.getElementById("cardFont").className="active";
+                $http.get("/goods/getsale").then(function(response) {
+                    $scope.cards= response.data.data;
+                });
+
+				/* 对游戏名列表的操作*/
+            }else{
+                document.getElementById("cardLi").className="";
+                document.getElementById("cardFont").className="";
+                $http.get("/prop/propList?id=" + id+"&pageNum="+$scope.pageNum+"&size="+$scope.size).then(function(response) {
+                    $scope.props = response.data.data.recordset;
+                    $scope.totalCount = response.data.data.recordCount;
+                    if("" == $scope.props){
+                        $scope.gameIcon="";
+                    }else{
+                        $scope.gameIcon=$scope.props[0].gameIcon;
+                    }
+                });
+				/* 下拉刷新 */
+                $scope.doRefresh = function() {
+                    $scope.size=6;
+                    $http.get("/prop/propList?id=" + id+"&pageNum="+$scope.pageNum+"&size="+$scope.size).then(function(response) {
+                        $scope.props = response.data.data.recordset;
+                    }).finally(function(){
+                        $scope.$broadcast('scroll.refreshComplete');
+                        $scope.hasValue=true;
+                    })
+                };
+
+                $scope.hasMore = function(){
+                    return $scope.hasValue;
+                }
+				/* 上拉加载更多 */
+                $scope.loadMore = function(){
+                    $http.get("/prop/propList?id=" + id+"&pageNum="+$scope.pageNum+"&size="+$scope.size).then(function(response){
+                        $scope.props = response.data.data.recordset;
+                        $scope.size += 6;
+                        if($scope.props.length == $scope.totalCount){
+                            $scope.hasValue=false;
+                        }
+                    });
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
+                }
+            }
+        }
+
+
+
+
+        $scope.isCurrent(-1,null);
+    });
 </script>
 </html>

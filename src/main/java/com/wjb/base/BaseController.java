@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by Administrator on 2017/7/6.
  */
 public class BaseController {
-    private  Map<String,Object> queryMap = new HashMap<>();
+    public  Map<String,Object> queryMap = new HashMap<>();
 
     public static String SUCCESS_FAIL(boolean flag,Object success,String error){
         JSONObject json = new JSONObject();

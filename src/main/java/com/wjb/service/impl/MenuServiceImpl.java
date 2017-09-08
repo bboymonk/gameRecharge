@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/9/4.
@@ -24,7 +25,8 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu,Long> implements MenuS
     }
 
     @Override
-    public List<Menu> rootMenu() {
+    public List<Menu> rootMenu(Map<String,Object> queryMap) {
+
         //所有菜单
         List<Menu> rootMenu = menuMapper.rootMenu();
         //最后的菜单

@@ -21,7 +21,7 @@ public class UserServiceImpl extends BaseServiceImpl<User,Long> implements UserS
     }
 
     @Override
-    public User login(String username) {
-        return userMapper.login(username);
+    public User login(String username,String password) {
+        return userMapper.login(username,password);
     }
 }

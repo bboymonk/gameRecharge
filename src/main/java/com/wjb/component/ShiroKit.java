@@ -15,17 +15,15 @@ import org.apache.shiro.util.ByteSource;
  */
 public class ShiroKit {
 
-    public static String md5(User user) {
-        String salt = new SecureRandomNumberGenerator().nextBytes().toHex();
-        user.setSalt(salt);
-        System.out.println("salt====="+salt);
-        String newPassword = new SimpleHash("MD5",user.getPassword(),salt,2).toString();
+    public static String md5(String password,String salt) {
+//        String salt = new SecureRandomNumberGenerator().nextBytes().toHex();
+        String newPassword = new SimpleHash("MD5",password,salt,2).toString();
         return newPassword;
     }
 
-    public static User getShiroAdmin(){
+    public static Object getShiroAdmin(){
         Subject subject = SecurityUtils.getSubject();
-        return  (User) subject.getPrincipal();
+        return   subject.getPrincipal();
     }
 
     public static void removeShiroSession(){
