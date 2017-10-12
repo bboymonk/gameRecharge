@@ -10,7 +10,6 @@ import java.util.Map;
  */
 public class BaseController {
     public  Map<String,Object> queryMap = new HashMap<>();
-
     public static String SUCCESS_FAIL(boolean flag,Object success,String error){
         JSONObject json = new JSONObject();
         if (flag){

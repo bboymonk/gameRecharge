@@ -1,82 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular.min.js"></script>
-    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular-sanitize.min.js"></script>
-    <script src="//cdn.bootcss.com/angular.js/1.6.4/angular-animate.min.js"></script>
-    <script src="//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script src="//cdn.bootcss.com/angular-md5/0.1.10/angular-md5.min.js"></script>
-</head>
+<#include "../common/head.html"/>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/bootstrap-select/1.12.2/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/select2/4.0.3/css/select2.min.css" rel="stylesheet">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+<script src="/js/ngClipboard.js"></script>
+<script src="/js/angular-popups.js"></script>
+<script src="/js/ui-bootstrap-tpls.js"></script>
+<script src="/js/angular-locale_zh.js"></script>
 
-<body>
-<div ng-app="myApp" ng-controller="myCtrl">
-    <button type="button" class="btn btn-sm btn-danger" ng-click="query()">搜索</button>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>age</th>
-            <th>address</th>
-            <th>createTime</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="x in list">
-            <th>{{x.id}}</th>
-            <th>{{x.name}}</th>
-            <th>{{x.age}}</th>
-            <th>{{x.address}}</th>
-            <th>{{x.createTime | date:'yyyy/MM/dd HH:mm:ss'}}</th>
-        </tr>
-        </tbody>
-    </table>
 
-    <ul uib-pagination
-        boundary-links="true"
-        items-per-page="size"
-        total-items="totalItems"
-        ng-model="currentPage"
-        class="pagination"
-        ng-change="pageChanged()"
-        previous-text="&lsaquo;"
-        next-text="&rsaquo;"
-        first-text="&laquo;"
-        last-text="&raquo;">
-    </ul>
+<body ng-app="goods" ng-controller="goodsCtrl">
+<div class="row-fluid">
+    <div class="span12">
 
+        <div class="control-group form-inline" style="border: 1px solid #ccc;padding: 10px; border-radius: 3px;">
+
+
+            <div class="form-group">
+                <input ng-model="startTime" style="margin-top: 8px" readonly class="form-control layer-date"
+                       id="startDate"
+                       placeholder="开始时间">
+                <label style="margin-top: -3px" class="laydate-icon inline demoicon"
+                       onclick="laydate({elem: '#startDate',format:'YYYY-MM-DD hh:mm:ss',istime:true,istoday:false});"></label>
+
+                <input ng-model="endTime" style="margin-top: 8px" readonly class="form-control layer-date" id="endDate"
+                       placeholder="结束时间">
+                <label style="margin-top: -3px" class="laydate-icon inline demoicon"
+                       onclick="laydate({elem: '#endDate',format:'YYYY-MM-DD hh:mm:ss',istime:true,istoday:false});"></label>
+            </div>
+
+
+            <button ng-click="query()" id="btn_search" type="button" class="btn btn-primary btn-sm"
+                    style="margin-left: 20px">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>查询
+            </button>
+            <button id="btn_clean_search" type="button" class="btn btn-danger btn-sm">清空条件</button>
+            <button ng-click="toExcel('homeExcel','inExcel','outExcel','totalExcel')" type="button"
+                    class="btn btn-info btn-sm">导出Excel
+            </button>
+        </div>
+    </div>
 </div>
-</body>
 
+
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+        <table id="homeExcel" class="table table-bordered">
+            <thead>
+            <tr>
+                <th>用戶ID</th>
+                <th>金額</th>
+                <th>币种</th>
+                <th>审核状态</th>
+                <th>审核人</th>
+                <th>创建时间</th>
+                <th>修改时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="x in list">
+                <td>{{x.userId}}</td>
+                <td>{{x.amount}}</td>
+                <td ng-init="money=['','人民币','美元']">{{money[x.countryId]}}</td>
+                <td>{{x.remark}}</td>
+                <td ng-init="type=['管理员','充值人员','主管','财务']">{{type[x.operator]}}</td>
+                <td>{{x.createTime}}</td>
+                <td>{{x.modifyTime}}</td>
+                <td>
+                    <button ng-click="doIt(x.id,x.userId,x.countryId,x.amount)">操作</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- 这里引用插件的分页-->
+        <nav style="text-align: center">
+            <ul uib-pagination items-per-page="page.pageSize" total-items="page.totalItems" ng-model="page.currentPage"
+                max-size="page.maxSize" class="pagination" boundary-links="true" force-ellipses="true"
+                ng-show="display" ng-change="pageChanged()" previous-text="&lsaquo;" next-text="&rsaquo;"
+                first-text="&laquo;" last-text="&raquo;"></ul>
+        </nav>
+
+    </div>
+</div>
 <script>
-    var app = angular.module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
-    app.controller('myCtrl', function ($scope, $http) {
-        $scope.currentPage = 1;//初始 当前页
-        $scope.maxSize = 7; //最多显示多少页码
-        $scope.size=5;
+    angular.module('goods', ['ui.bootstrap']).controller('goodsCtrl', function ($scope, $http) {
+        $scope.stateTime = "";//起始时间
+        $scope.endTime = "";//结束时间
+        //分页组件
+        $scope.page = {};
+        $scope.page.totalItems = "";
+        $scope.page.currentPage = 1;//当前页码
+        $scope.page.pageSize = 3;
+        $scope.page.maxSize = 5;
         $scope.setPage = function (pageNo) {
-            $scope.currentPage = pageNo;
+            $scope.page.currentPage = pageNo;
         };
         $scope.pageChanged = function () {
-            $scope.query();
+            $scope.selectByKwyword();
         };
-        $scope.query = function query() {
-            var URL = "/hello?pageNum="+$scope.currentPage+"&size="+$scope.size;
+        $scope.selectByKwyword = function () {
+            var URL = '/withdraw/search?pageNum=' + $scope.page.currentPage + '&size=' + $scope.page.pageSize;
             $http.get(URL).then(function (response) {
-                $scope.list = response.data.DATA.list;
-                console.log($scope.list);
-                $scope.totalItems = response.data.DATA.total;
+                $scope.list = response.data.data.list;
+                $scope.page.totalItems = response.data.data.total;
+                console.log(response.data.data);
+                if ($scope.list == null || $scope.list.length == 0) {
+                    $scope.display = false;
+                } else {
+                    $scope.display = true;
+                }
             });
+        };
+        $scope.selectByKwyword();
+
+        //提现
+        $scope.doIt = function (id, userId, countryId, amount) {
+            if (confirm("审核是否通过")) {
+                $http.get("/withdraw/doIt?id=" + id + "&userId=" + userId + "&countryId=" + countryId + "&amount=" + amount).then(function (response) {
+//                if (response.data.errno == 1){
+                    alert(response.data.txt);
+//                }
+                    $scope.refresh();
+                });
+            } else {
+                alert("审核不通过");
+            }
+        };
+
+
+        //刷新页面
+        $scope.refresh = function () {
+            location.reload();
         }
-        $scope.query();
+
+        //清空条件按钮点击事件
+        $("#btn_clean_search").on("click", function () {
+            $('#startDate').val("");
+            $('#endDate').val("");
+            refresh();
+        });
+
 
     });
+
 </script>
 
-
+</body>
 </html>

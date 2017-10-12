@@ -14,10 +14,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.session.HttpServletSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -73,7 +70,7 @@ public class UserController extends BaseController{
 
     @ResponseBody
     @RequestMapping(value = "login",method = RequestMethod.POST)
-    public String doLogin(User user,HttpSession session) {
+    public String doLogin(User user) {
         User admin = (User)ShiroKit.getShiroAdmin();
         if (admin != null){
             return SUCCESS_FAIL(false,null,"您已登录");

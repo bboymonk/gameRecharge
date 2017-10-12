@@ -27,8 +27,8 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.wjb.model.User">
-    insert into t_user (id, nickname, mobile, 
-      email, username, password, 
+    insert into t_user (id, nickname, mobile,
+      email, nickname, password,
       balance, score, type, 
       create_time)
     values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
@@ -141,7 +141,7 @@
     set nickname = #{nickname,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
+      nickname = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       balance = #{balance,jdbcType=DECIMAL},
       score = #{score,jdbcType=INTEGER},
@@ -150,7 +150,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="login" parameterType="String" resultType="com.wjb.model.User">
-    SELECT * from t_user WHERE username=#{0}
+    SELECT * from t_user WHERE nickname=#{0}
     AND password=#{1}
   </select>
 </mapper>

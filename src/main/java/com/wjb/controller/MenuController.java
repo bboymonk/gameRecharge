@@ -17,12 +17,23 @@ import java.util.List;
 @Controller
 @RequestMapping("menu")
 public class MenuController extends BaseController {
+    private static int i = 0;
+    private int x = 0;
+
+    @ResponseBody
+    @GetMapping("test")
+    public String test(){
+        System.out.println(i++ +"||"+ x++);
+        return null;
+    }
+
     @Autowired
     private MenuService menuService;
 
     @ResponseBody
     @GetMapping("getMenu")
     public String getMenu(Integer parentId){
+        System.out.println(i + "||"+ x);
         queryMap.put("parentId",parentId);
         List<Menu> menus = menuService.rootMenu(queryMap);
         return SUCCESS_FAIL(menus!= null,menus,"error");
